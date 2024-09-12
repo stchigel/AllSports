@@ -55,12 +55,6 @@ header div:hover {
     width: 95%;
     margin: auto;
     background-color: var(--bgt);
-    border-radius: 5px;
-}
-
-#news-section a{
-    text-decoration: none;
-    color: var(--b);
 }
 
 .news {
@@ -90,19 +84,10 @@ header div:hover {
 footer {
     height: 20px;
     font-size: 15px;
-    display: flex;
-    justify-content: start;
-    align-items: baseline;
 }
 
 footer p {
     padding: 10px;
-}
-
-footer img {
-    height: 40px;
-    margin-left: 40px;
-    margin-top: 20px;
 }
 
 
@@ -220,101 +205,6 @@ section.tmain {
     background-color: var(--bg2);
 }
 
-@keyframes moveUp {
-    0% {
-        top: 0; /* Start at the top */
-    }
-    100% {
-        top: -100vh; /* Move up by 100px */
-        display: none;
-    }
-}
-
-@keyframes popUp {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes noScroll {
-    0% {
-        overflow: hidden;
-    }
-    100% {
-        overflow: scroll;
-    }
-}
-
-.cubrir {
-    z-index: 99;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #911d21;
-    animation: moveUp 2s ease-in-out 1s forwards;
-}
-
-.cubrir img {
-    width: 20%;
-    height: 20%;
-    animation: popUp 1s ease-in-out 0s forwards;
-}
-
-.scrollbody {
-    animation: noScroll 3s ease-in-out 0s forwards;
-}
-
-aside {
-    width: 24%;
-    background-color: var(--bgt);
-    border-radius: 5px;
-}
-
-.medallero {
-    width: 90%;
-    margin: auto;
-}
-
-.asideynews {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-.imgad {
-    width: 50%;
-    margin: auto;
-}
-
-aside p {
-    font-size: 2vw;
-}
-
-
-.headernoti {
-    width: 80%;
-    margin: auto;
-}
-
-.headernoti img{
-    width: 100%;
-    margin: auto;
-}
-
-.notimg {
-    width: 75%;
-    margin: auto;
-}
-
-
 @media (min-width: 500px) {
     header div {
         display: flex;
@@ -338,11 +228,6 @@ aside p {
     .mnic {
         display: none;
     }
-}
-
-aside {
-    font-size: 1.5vw;
-    display: none;
 }
 
 @media (min-width: 700px) {
@@ -370,13 +255,6 @@ aside {
         text-align: center;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--bgt);
-    }
-    aside {
-        display: block;
-        font-size: 1rem;
-    }
-    #news-section { 
-        width: 50%;
     }
 }
 
