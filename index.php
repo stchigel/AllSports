@@ -55,10 +55,10 @@
             </thead>
             <tbody>
                 <?php 
-        /*$resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `Partidos-ganados` desc,`Partidos-empatados` desc,`Partidos-perdidos` desc;");
+        $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `Partidos-ganados` desc,`Partidos-empatados` desc,`Partidos-perdidos` desc;");
         $tmpCount = 1;
         while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
-           */?>
+           ?>
                 <tr>
                     <th><?php echo "ㅤ   ".$tmpCount?></th>
                     <th>h</th>
@@ -69,7 +69,7 @@
                     <th><?php echo $fila['Partidos-ganados']+$fila['Partidos-empatados']+$fila['Partidos-perdidos']?></th>
                 </tr>
                 <?php
-        /*$tmpCount ++; }*/
+        $tmpCount ++; }
         ?>
         </tbody>
         </table>
