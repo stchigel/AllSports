@@ -149,6 +149,29 @@ table {
     width: 100%;
 }
 
+.table_wrapper{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: var(--w);
+    border-radius: 10px;
+}
+
+thead th a{
+    text-decoration: none;
+    color: var(--b);
+}
+
+thead th a:hover{
+    text-decoration: none;
+    color: var(--b);
+    border-bottom: 1px solid var(--b);
+}
+
+th {
+    padding-left: 10px;
+}
+
 section.tmain {
     width: 95%;
     margin: auto;
@@ -360,6 +383,7 @@ aside {
         padding: 10px;
         font-size: 25px;
     }
+    
 }
 
 @media (min-width: 1050px) {
@@ -379,7 +403,6 @@ aside {
         width: 50%;
     }
 }
-
 
 .anek-devanagari-400 {
     font-family: "Anek Devanagari", sans-serif;

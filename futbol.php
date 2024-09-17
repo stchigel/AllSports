@@ -1,5 +1,5 @@
 <?php
-    $servername = "127.0.0.1";
+    /*$servername = "127.0.0.1";
     $database = "AllSports";
     $username = "alumno";
     $password = "alumnoipm";
@@ -7,7 +7,7 @@
     $conexion = mysqli_connect($servername, $username, $password, $database); // se crea la conexion
     if (!$conexion) {
         die("Conexion fallida: " . mysqli_connect_error());
-    }
+    }*/
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -38,34 +39,38 @@
     <section class="tmain">
         <select class="botong">
             <?php 
-        $resultados = mysqli_query($conexion,"select * from `Futbol-torneos`;");
+        /*$resultados = mysqli_query($conexion,"select * from `Futbol-torneos`;");
         while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
            ?>
             <option class="opcion" value="<?php echo $fila['idFutbol-torneos']?>"><?php echo $fila['Nombre']?></option>
             <?php
-        }
+        }*/
         ?>
-            <!--<option>Clubes Combebol</option>
+            <option>Clubes Combebol</option>
         <option>Clubes UEFA</option>
         <option>Ranking Fifa</option>
         <option>Balon de Oro</option>
-        <option>Autistas del IPM</option>-->
+        <option>Autistas del IPM</option>
         </select>
+        <div class="table_wrapper">
         <table>
             <thead>
                 <tr class="futbolhead">
                     <th> # | </th>
                     <th> Equipo | </th>
-                    <th>PJ | </th>
-                    <th>PG | </th>
-                    <th>PE | </th>
-                    <th>PP | </th>
-                    <th>Goles</th>
+                    <th><a href="?ft=PJ">PJ</a> | </th>
+                    <th><a href="?ft=PG">PG</a> | </th>
+                    <th><a href="?ft=PE">PE</a> | </th>
+                    <th><a href="?ft=PP">PP</a> | </th>
+                    <th><a href="?ft=GF">GF</a> | </th>
+                    <th><a href="?ft=GC">GC</a> | </th>
+                    <th><a href="?ft=DIF">DIF</a> | </th>
+                    <th><a href="?ft=PTS">PTS</a> | </th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-        $resultados = mysqli_query($conexion,"select * from `Futbol-equipos`;");
+        /*$resultados = mysqli_query($conexion,"select * from `Futbol-equipos`;");
         $tmpCount = 1;
         while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
            ?>
@@ -79,14 +84,42 @@
                     <th><?php echo $fila['Goles-a-Favor']?></th>
                 </tr>
                 <?php
-        $tmpCount ++; }
+        $tmpCount ++; }*/
         ?>
-                <!--<tr>
+                <tr>
                 <th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th>
-            </tr>-->
+            </tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
+            <tr><th>1</th><th>Club Matanza</th><th>100</th><th>1</th><th>5</th><th>94</th><th>2</th></tr>
             </tbody>
         </table>
+        </div>
     </section>
+    <footer>
+      <p>All Sports SRL</p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
