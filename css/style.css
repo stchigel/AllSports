@@ -297,6 +297,7 @@ section.tmain {
 
 aside {
     width: 24%;
+    height: 350px;
     background-color: var(--bgt);
     border-radius: 5px;
 }
@@ -313,8 +314,16 @@ aside {
 }
 
 .imgad {
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgad img {
+    width: 80%;
+    height: auto;
 }
 
 aside p {

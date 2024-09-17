@@ -43,7 +43,7 @@
         while($res=mysqli_fetch_assoc($resp)){
             ?>
     <div class="headernoti">
-        <div class="notimg"><img src="img/Francella.jpg" alt=""></div>
+        <div class="notimg"><img src="img/<?php echo $res['img']?>" alt=""></div>
         <h1><?php echo $res['titulo']?></h1>
         <p><?php echo $res['nbody']?></p>
     </div>

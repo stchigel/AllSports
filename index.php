@@ -1,5 +1,5 @@
 <?php
-    /*$servername = "127.0.0.1";
+    $servername = "127.0.0.1";
     $database = "AllSports";
     $username = "alumno";
     $password = "alumnoipm";
@@ -8,7 +8,7 @@
     if (!$conexion) {
         die("Conexion fallida: " . mysqli_connect_error());
     }
-    */?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,21 +55,41 @@
             </thead>
             <tbody>
                 <?php 
-       /* $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `Partidos-ganados` desc,`Partidos-empatados` desc,`Partidos-perdidos` desc;");
+                $query = "SELECT 
+                p.Nombre AS Pais,
+                COUNT(CASE WHEN m.Tipo = 1 THEN 1 END) AS Oro,
+                COUNT(CASE WHEN m.Tipo = 2 THEN 1 END) AS Plata,
+                COUNT(CASE WHEN m.Tipo = 3 THEN 1 END) AS Bronce
+            FROM 
+                Pais p
+            JOIN 
+                Atleta a ON p.idPais = a.Pais_idPais
+            JOIN 
+                Medalla m ON a.idAtleta = m.Atleta_idAtleta
+            GROUP BY 
+                p.Nombre
+            ORDER BY 
+                Oro DESC, 
+                Plata DESC, 
+                Bronce DESC
+            LIMIT
+                10;
+            ";
+       $resultados = mysqli_query($conexion,$query);
         $tmpCount = 1;
         while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
            ?>
                 <tr>
                     <th><?php echo "ㅤ   ".$tmpCount?></th>
-                    <th>h</th>
+                    <th><?php echo $fila['Pais']?></th>
                     
-                    <th><?php echo $fila['Partidos-ganados']?></th>
-                    <th><?php echo $fila['Partidos-empatados']?></th>
-                    <th><?php echo $fila['Partidos-perdidos']?></th>
-                    <th><?php echo $fila['Partidos-ganados']+$fila['Partidos-empatados']+$fila['Partidos-perdidos']?></th>
+                    <th><?php echo $fila['Oro']?></th>
+                    <th><?php echo $fila['Plata']?></th>
+                    <th><?php echo $fila['Bronce']?></th>
+                    <th><?php echo $fila['Oro']+$fila['Plata']+$fila['Bronce']?></th>
                 </tr>
                 <?php
-        $tmpCount ++; }*/
+        $tmpCount ++; }
         ?>
         </tbody>
         </table>
@@ -78,18 +98,20 @@
   <div id="news-section">
     <div class="padding">
       <?php 
-        /*$resultados = mysqli_query($conexion,"select idnoticias, img, titulo from noticias;");
+        $resultados = mysqli_query($conexion,"select idnoticias, img, titulo from noticias order by idnoticias desc;");
             
         while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
           ?>
+          <a href="noticia.php?id=<?php echo $fila['idnoticias']?>">
       <div class="news">
         <img src="img/<?php echo $fila['img']?>" alt="" class="nimg">
-        <a href="noticia.php?id=<?php echo $fila['idnoticias']?>"><h2 class="ntitle"><?php echo $fila['titulo']?></h2></a>
+        <h2 class="ntitle"><?php echo $fila['titulo']?></h2>
       </div>
+      </a>
       <?php
-        }*/
+        }
         ?>
-      <!-- <div class="news">
+      <!--<div class="news">
           <img src="img/jjnoti.webp" alt="" class="nimg">
           <h2 class="ntitle">Jon Jones CAE en P4P después de ser ARRESTADO (por violencia doméstica)</h2>
         </div>
@@ -109,7 +131,7 @@
   </div>
   <aside>
     <div class="imgad">
-    <img src="img/images.png" alt="">
+      <img src="img/image.jpg" alt="">
     </div>
   </aside>
 </div>
