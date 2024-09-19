@@ -1,5 +1,5 @@
 <?php
-    /*$servername = "127.0.0.1";
+    $servername = "127.0.0.1";
     $database = "AllSports";
     $username = "alumno";
     $password = "alumnoipm";
@@ -7,7 +7,7 @@
     $conexion = mysqli_connect($servername, $username, $password, $database); // se crea la conexion
     if (!$conexion) {
         die("Conexion fallida: " . mysqli_connect_error());
-    }*/
+    }
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,92 +32,41 @@
     <div id="des-section">
         <div id="menu">
             <ul>
-                <li><a href="">Histórico</a></li>
-                <li><a href="">Libra por Libra</a></li>
-                <li><a href="">Peso Mosca</a></li>
-                <li><a href="">Peso Gallo</a></li>
-                <li><a href="">Peso Pluma</a></li>
-                <li><a href="">Peso Ligero</a></li>
-                <li><a href="">Peso Welter</a></li>
-                <li><a href="">Peso Medio</a></li>
-                <li><a href="">Peso Semipesado</a></li>
-                <li><a href="">Peso Pesado</a></li>
+                <li><a href="?dv=PfP">Libra por Libra</a></li>
+                <li><a href="?dv=Flyweight">Peso Mosca</a></li>
+                <li><a href="?dv=Bantamweight">Peso Gallo</a></li>
+                <li><a href="?dv=Featherweight">Peso Pluma</a></li>
+                <li><a href="?dv=Lightweight">Peso Ligero</a></li>
+                <li><a href="?dv=Welterweight">Peso Welter</a></li>
+                <li><a href="?dv=Middleweight">Peso Medio</a></li>
+                <li><a href="?dv=Light Heavyweight">Peso Semipesado</a></li>
+                <li><a href="?dv=Heavyweight">Peso Pesado</a></li>
             </ul>
         </div>
       <div class="padding">
+      <?php 
+        $dv = $_GET["dv"];
+        $resultados = mysqli_query($conexion,"select * from `Peleadores` where division = '$dv' order by posicion_division limit 10;");
         
+        $tmpCount = 1;
+        while($fila=mysqli_fetch_assoc($resultados)){ 
+           ?>
         <div class="des">
-            <h2 class="desntitle">1. Islam Makhachev</h2>
-            <h2 class="destitle">Campeon Peso Ligero</h2>
+            <h2 class="desntitle"><?php echo $tmpCount?>. <?php echo $fila['nombre']?> <?php echo $fila['apellido']?></h2>
+            <h2 class="destitle"><?php echo $fila['status']?></h2>
             <div class="desflex">
-                <ul class="autismo">
-                    <li>Record: 26-1</li>
-                    <li>KO: 5</li>
-                    <li>Sum: 12</li>
+                <ul class="algo">
+                    <li>Record: <?php echo $fila['record']?></li>
+                    <li>KO: <?php echo $fila['KO']?></li>
+                    <li>Sum: <?php echo $fila['SUM']?></li>
                 </ul>
-                <img src="img/Makhachev.png" alt="" class="desimg">
+                <img src="img/UFC/<?php echo $fila['division']?>/<?php echo strtolower($fila['apellido'])?>.png" alt="" class="desimg">
             </div>
         </div>
-        <div class="des">
-            <h2 class="desntitle">1. Islam Makhachev</h2>
-            <h2 class="destitle">Campeon Peso Ligero</h2>
-            <div class="desflex">
-                <ul class="autismo">
-                    <li>Record: 26-1</li>
-                    <li>KO: 5</li>
-                    <li>Sum: 12</li>
-                </ul>
-                <img src="img/Makhachev.png" alt="" class="desimg">
-            </div>
-        </div>
-        <div class="des">
-            <h2 class="desntitle">1. Islam Makhachev</h2>
-            <h2 class="destitle">Campeon Peso Ligero</h2>
-            <div class="desflex">
-                <ul class="autismo">
-                    <li>Record: 26-1</li>
-                    <li>KO: 5</li>
-                    <li>Sum: 12</li>
-                </ul>
-                <img src="img/Makhachev.png" alt="" class="desimg">
-            </div>
-        </div>
-        <div class="des">
-            <h2 class="desntitle">1. Islam Makhachev</h2>
-            <h2 class="destitle">Campeon Peso Ligero</h2>
-            <div class="desflex">
-                <ul class="autismo">
-                    <li>Record: 26-1</li>
-                    <li>KO: 5</li>
-                    <li>Sum: 12</li>
-                </ul>
-                <img src="img/Makhachev.png" alt="" class="desimg">
-            </div>
-        </div>
-        <div class="des">
-            <h2 class="desntitle">1. Islam Makhachev</h2>
-            <h2 class="destitle">Campeon Peso Ligero</h2>
-            <div class="desflex">
-                <ul class="autismo">
-                    <li>Record: 26-1</li>
-                    <li>KO: 5</li>
-                    <li>Sum: 12</li>
-                </ul>
-                <img src="img/Makhachev.png" alt="" class="desimg">
-            </div>
-        </div>
-        <div class="des">
-            <h2 class="desntitle">1. Islam Makhachev</h2>
-            <h2 class="destitle">Campeon Peso Ligero</h2>
-            <div class="desflex">
-                <ul class="autismo">
-                    <li>Record: 26-1</li>
-                    <li>KO: 5</li>
-                    <li>Sum: 12</li>
-                </ul>
-                <img src="img/Makhachev.png" alt="" class="desimg">
-            </div>
-        </div>
+        <?php
+        $tmpCount ++; }
+        ?>
+        
       </div>
     </div>
     <footer>

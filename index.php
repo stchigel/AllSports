@@ -32,7 +32,7 @@
     <a href="/index.php" class="mnic"><img src="img/bx-menu.svg" alt="logo"></a>
     <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
     <div><a href="/futbol.php" class="link">Futbol</a></div>
-    <div><a href="" class="link">Basquet</a></div>
+    <div><a href="" class="link">Tennis</a></div>
     <div><a href="" class="link">F1</a></div>
     <div><a href="" class="link">MMA</a></div>
     <div><a href="/atletas.php" class="link">Atletas</a></div>
@@ -111,22 +111,6 @@
       <?php
         }
         ?>
-      <!--<div class="news">
-          <img src="img/jjnoti.webp" alt="" class="nimg">
-          <h2 class="ntitle">Jon Jones CAE en P4P después de ser ARRESTADO (por violencia doméstica)</h2>
-        </div>
-        <div class="news">
-          <img src="img/FRANCELLAJUEGOSODELIMFGICOSD.jpg" alt="" class="nimg">
-          <h2 class="ntitle">Francella a participar de los Juegos Olímpicos Beijing 2038</h2>
-        </div>
-        <div class="news">
-          <img src="img/jeffrey-epstein-fue-condenado_-por-una-red-de-55JTERW4LVHEZF6ZYXAN6AFZUU.avif" alt="" class="nimg">
-          <h2 class="ntitle">Epstein sube en el ranking de CP</h2>
-        </div>
-        <div class="news">
-        <img src="img/16866445189149.jpg" alt="" class="nimg">
-        <h2 class="ntitle">La velada del año termino en tragedia historica</h2>
-        </div>-->
     </div>
   </div>
   <aside>

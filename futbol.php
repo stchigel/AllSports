@@ -68,7 +68,7 @@
                 <?php 
         $resultados = mysqli_query($conexion,"select * from `Futbol-equipos`;");
         $tmpCount = 1;
-        while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
+        while($fila=mysqli_fetch_assoc($resultados)){ 
            ?>
                 <tr>
                     <th class="mnsz"><?php echo "ㅤ   ".$tmpCount?></th>
