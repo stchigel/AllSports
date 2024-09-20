@@ -1,5 +1,5 @@
 <?php
-    /*$servername = "127.0.0.1";
+    $servername = "127.0.0.1";
     $database = "AllSports";
     $username = "alumno";
     $password = "alumnoipm";
@@ -7,7 +7,7 @@
     $conexion = mysqli_connect($servername, $username, $password, $database); // se crea la conexion
     if (!$conexion) {
         die("Conexion fallida: " . mysqli_connect_error());
-    }*/
+    }
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +31,9 @@
         <a href="/index.php" class="mnic"><img src="img/bx-menu.svg" alt="logo"></a>
         <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
         <div><a href="/futbol.php" class="link">Futbol</a></div>
-        <div><a href="" class="link">Basquet</a></div>
+        <div><a href="" class="link">Tennis</a></div>
         <div><a href="" class="link">F1</a></div>
-        <div><a href="/MMA.php" class="link">MMA</a></div>
+        <div><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
         <div><a href="" class="link">Medallero</a></div>
     </header>
     <section class="tmain">
@@ -66,7 +66,13 @@
             </thead>
             <tbody>
                 <?php 
-        $resultados = mysqli_query($conexion,"select * from `Futbol-equipos`;");
+        if (empty($_GET['ft'])) {
+            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos`;");
+          } else {
+            $ft = $_GET['ft'];
+            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft;");
+          }
+
         $tmpCount = 1;
         while($fila=mysqli_fetch_assoc($resultados)){ 
            ?>

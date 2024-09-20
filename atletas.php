@@ -23,11 +23,13 @@
 </head>
 <body id="batl">
     <header>
-      <a href=""><img src="img/logo.svg" alt="logo"></a>
-      <div><a href="/futbol.php">Futbol</a></div>
-      <div><a href="">Basquet</a></div>
-      <div><a href="">F1</a></div>
-      <div><a href="">MMA</a></div>
+        <a href="/index.php" class="mnic"><img src="img/bx-menu.svg" alt="logo"></a>
+        <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
+        <div><a href="/futbol.php" class="link">Futbol</a></div>
+        <div><a href="" class="link">Tennis</a></div>
+        <div><a href="" class="link">F1</a></div>
+        <div><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
+        <div><a href="" class="link">Medallero</a></div>
     </header>
     <div id="des-section">
         <div id="menu">
@@ -41,19 +43,39 @@
                 <li><a href="?dv=Middleweight">Peso Medio</a></li>
                 <li><a href="?dv=Light Heavyweight">Peso Semipesado</a></li>
                 <li><a href="?dv=Heavyweight">Peso Pesado</a></li>
+                <li><a href="?dv=His&sel=peleas">Más peleas</a></li>
+                <li><a href="?dv=His&sel=victorias">Más victorias</a></li>
+                <li><a href="?dv=His&sel=derrotas">Más derrotas</a></li>
+                <li><a href="?dv=His&sel=victorias_titulo">Más victorias titulares</a></li>
+                <li><a href="?dv=His&sel=Finalizaciones">Más finalizaciones</a></li>
+                <li><a href="?dv=His&sel=KO">Más KO</a></li>
+                <li><a href="?dv=His&sel=SUM">Más SUM</a></li>
+                <li><a href="?dv=His&sel=Desiciones">Más decisiones</a></li>
             </ul>
         </div>
       <div class="padding">
       <?php 
         $dv = $_GET["dv"];
-        $resultados = mysqli_query($conexion,"select * from `Peleadores` where division = '$dv' order by posicion_division limit 10;");
+        if ($dv=="PfP"){
+            $resultados = mysqli_query($conexion,"select * from `Peleadores` where posicionP4P is not null order by posicionP4P asc limit 10;");
+        } else if ($dv=="His"){
+            $sel = $_GET["sel"];
+            if($sel=="Finalizaciones"){
+                $resultados = mysqli_query($conexion,"select * from `Peleadores` order by KO + SUM desc limit 10;");
+            }else {
+
+            
+            $resultados = mysqli_query($conexion,"select * from `Peleadores` order by $sel desc limit 10;");
+        }
+        } else {
+            $resultados = mysqli_query($conexion,"select * from `Peleadores` where division = '$dv' and posicion_division is not null order by posicion_division limit 10;");
+        }
         
         $tmpCount = 1;
         while($fila=mysqli_fetch_assoc($resultados)){ 
            ?>
         <div class="des">
             <h2 class="desntitle"><?php echo $tmpCount?>. <?php echo $fila['nombre']?> <?php echo $fila['apellido']?></h2>
-            <h2 class="destitle"><?php echo $fila['status']?></h2>
             <div class="desflex">
                 <ul class="algo">
                     <li>Record: <?php echo $fila['record']?></li>
@@ -66,7 +88,6 @@
         <?php
         $tmpCount ++; }
         ?>
-        
       </div>
     </div>
     <footer>

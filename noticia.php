@@ -31,10 +31,9 @@
     <a href="/index.php" class="mnic"><img src="img/bx-menu.svg" alt="logo"></a>
     <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
     <div><a href="/futbol.php" class="link">Futbol</a></div>
-    <div><a href="" class="link">Basquet</a></div>
+    <div><a href="" class="link">Tennis</a></div>
     <div><a href="" class="link">F1</a></div>
-    <div><a href="" class="link">MMA</a></div>
-    <div><a href="/atletas.php" class="link">Atletas</a></div>
+    <div><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
     <div><a href="" class="link">Medallero</a></div>
   </header>
   <?php 

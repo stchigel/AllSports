@@ -34,8 +34,7 @@
     <div><a href="/futbol.php" class="link">Futbol</a></div>
     <div><a href="" class="link">Tennis</a></div>
     <div><a href="" class="link">F1</a></div>
-    <div><a href="" class="link">MMA</a></div>
-    <div><a href="/atletas.php" class="link">Atletas</a></div>
+    <div><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
     <div><a href="" class="link">Medallero</a></div>
   </header>
 <div class="asideynews">
