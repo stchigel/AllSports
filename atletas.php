@@ -22,15 +22,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body id="batl">
-    <header>
-        <a href="/index.php" class="mnic"><img src="img/bx-menu.svg" alt="logo"></a>
-        <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
-        <div><a href="/futbol.php" class="link">Futbol</a></div>
-        <div><a href="" class="link">Tennis</a></div>
-        <div><a href="" class="link">F1</a></div>
-        <div><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
-        <div><a href="" class="link">Medallero</a></div>
-    </header>
+<header>
+    <button class="hamburger mnic">
+      <img src="img/bx-menu.svg" alt="logo" class="menuIcon">
+      <img src="img/close.svg" alt="logo" class="closeIcon">
+    </button>
+    <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
+    <div class="menunav1">
+      <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
+      <div class="divlink"><a href="" class="link">Tennis</a></div>
+      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
+      <div class="divlink"><a href="" class="link">Medallero</a></div>
+    </div>
+  </header>
+  <div class="menunav2">
+      <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
+      <div class="divlink"><a href="" class="link">Tennis</a></div>
+      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
+      <div class="divlink"><a href="" class="link">Medallero</a></div>
+    </div>
     <div id="des-section">
         <div id="menu">
             <ul>
@@ -96,5 +108,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/main.js" crossorigin="anonymous"></script>
 </body>
 </html>

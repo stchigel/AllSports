@@ -43,11 +43,7 @@ header a {
     color: var(--w);
 }
 
-header div {
-    display: none;
-}
-
-header div:hover {
+header .divlink:hover {
     background-color: var(--h);
 }
 
@@ -346,6 +342,32 @@ aside p {
     margin: auto;
 }
 
+.menunav1 {
+    display: none;
+}
+
+.menunav2 {
+    display: none;
+    background-color: var(--r);
+}
+
+.menunav2 a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 550;
+    text-decoration: none;
+    color: var(--w);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.menunav2 .divlink:hover {
+    background-color: var(--h);
+}
+
+.closeIcon {
+    display: none;
+}
+
 
 @media (min-width: 500px) {
     header div {
@@ -368,6 +390,12 @@ aside p {
         display: flex;
     }
     .mnic {
+        display: none;
+    }
+    .menunav1 {
+        display: flex;
+    }
+    .menunav2 {
         display: none;
     }
 }
@@ -411,6 +439,16 @@ aside {
     #news-section { 
         width: 50%;
     }
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .anek-devanagari-400 {

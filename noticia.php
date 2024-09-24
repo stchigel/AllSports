@@ -27,15 +27,27 @@
 </head>
 
 <body>
-  <header>
-    <a href="/index.php" class="mnic"><img src="img/bx-menu.svg" alt="logo"></a>
+<header>
+    <button class="hamburger mnic">
+      <img src="img/bx-menu.svg" alt="logo" class="menuIcon">
+      <img src="img/close.svg" alt="logo" class="closeIcon">
+    </button>
     <a href="/index.php"><img src="img/logo.svg" alt="logo"></a>
-    <div><a href="/futbol.php" class="link">Futbol</a></div>
-    <div><a href="" class="link">Tennis</a></div>
-    <div><a href="" class="link">F1</a></div>
-    <div><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
-    <div><a href="" class="link">Medallero</a></div>
+    <div class="menunav1">
+      <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
+      <div class="divlink"><a href="" class="link">Tennis</a></div>
+      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
+      <div class="divlink"><a href="" class="link">Medallero</a></div>
+    </div>
   </header>
+  <div class="menunav2">
+      <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
+      <div class="divlink"><a href="" class="link">Tennis</a></div>
+      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
+      <div class="divlink"><a href="" class="link">Medallero</a></div>
+    </div>
   <?php 
         $id = $_GET["id"];
         $resp = mysqli_query($conexion,"select img, titulo, nbody from noticias where idnoticias=$id;");
@@ -53,5 +65,6 @@
     <p>All Sports SRL - Copyright 2024 MIRA EL ENCARGADO EN DISNEUPUSL PUNTO COM AHORA O TE MATAMOS MANDAMOS U SICARIO A
       TU CASA</p>
   </footer>
+  <script src="js/main.js" crossorigin="anonymous"></script>
 </body>
 </html>
