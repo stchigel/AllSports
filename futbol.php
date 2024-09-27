@@ -49,40 +49,33 @@
       <div class="divlink"><a href="" class="link">Medallero</a></div>
     </div>
     <section class="tmain">
-        <select class="botong">
-            <?php 
-        $resultados = mysqli_query($conexion,"select * from `Futbol-torneos`;");
-        while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
-           ?>
-            <option class="opcion" value="<?php echo $fila['idFutbol-torneos']?>"><?php echo $fila['Nombre']?></option>
-            <?php
-        }
-        ?>
-            
-        </select>
         <div class="table_wrapper">
         <table>
             <thead>
                 <tr class="futbolhead">
                     <th> # | </th>
                     <th> Equipo | </th>
-                    <th><a href="?ft=PJ">PJ</a> | </th>
-                    <th><a href="?ft=PG">PG</a> | </th>
-                    <th><a href="?ft=PE">PE</a> | </th>
-                    <th><a href="?ft=PP">PP</a> | </th>
-                    <th><a href="?ft=GF">GF</a> | </th>
-                    <th><a href="?ft=GC">GC</a> | </th>
+                    <th><a href="?ft=Jugados">PJ</a> | </th>
+                    <th><a href="?ft=Ganados">PG</a> | </th>
+                    <th><a href="?ft=Empatados">PE</a> | </th>
+                    <th><a href="?ft=Perdidos">PP</a> | </th>
+                    <th><a href="?ft=Goles-a-Favor">GF</a> | </th>
+                    <th><a href="?ft=Goles-en-Contra">GC</a> | </th>
                     <th><a href="?ft=DIF">DIF</a> | </th>
                     <th><a href="?ft=PTS">PTS</a> | </th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-        if (empty($_GET['ft'])) {
-            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos`;");
+        if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
+            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Puntos;");
           } else {
             $ft = $_GET['ft'];
-            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft;");
+            if ($ft=="DIF"){
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Goles-a-Favor - Goles-en-Contra;");
+            }else{
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft;");
+            }
           }
 
         $tmpCount = 1;
@@ -91,11 +84,14 @@
                 <tr>
                     <th class="mnsz"><?php echo "ㅤ   ".$tmpCount?></th>
                     <th class="wrp"><?php echo $fila['Nombre']?></th>
-                    <th class="mnsz"><?php echo $fila['Partidos-jugados']?></th>
-                    <th class="mnsz"><?php echo $fila['Partidos-ganados']?></th>
-                    <th class="mnsz"><?php echo $fila['Partidos-empatados']?></th>
-                    <th class="mnsz"><?php echo $fila['Partidos-perdidos']?></th>
+                    <th class="mnsz"><?php echo $fila['Jugados']?></th>
+                    <th class="mnsz"><?php echo $fila['Ganados']?></th>
+                    <th class="mnsz"><?php echo $fila['Empatados']?></th>
+                    <th class="mnsz"><?php echo $fila['Perdidos']?></th>
                     <th><?php echo $fila['Goles-a-Favor']?></th>
+                    <th><?php echo $fila['Goles-en-Contra']?></th>
+                    <th><?php echo $fila['Goles-a-Favor'] - $fila['Goles-en-Contra']?></th>
+                    <th><?php echo $fila['Puntos']?></th>
                 </tr>
                 <?php
         $tmpCount ++; }

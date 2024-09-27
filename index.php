@@ -4,6 +4,16 @@
     $username = "alumno";
     $password = "alumnoipm";
     
+
+function country2flag(string $countryCode): string
+{
+    return (string) preg_replace_callback(
+        '/./',
+        static fn (array $letter) => mb_chr(ord($letter[0]) % 32 + 0x1F1E5),
+        $countryCode
+    );
+}
+
     $conexion = mysqli_connect($servername, $username, $password, $database); // se crea la conexion
     if (!$conexion) {
         die("Conexion fallida: " . mysqli_connect_error());
@@ -91,7 +101,7 @@
            ?>
                 <tr>
                     <th><?php echo "ㅤ   ".$tmpCount?></th>
-                    <th><?php echo $fila['Pais']?></th>
+                    <th><?php echo country2flag($fila['Pais']);?></th>
                     
                     <th><?php echo $fila['Oro']?></th>
                     <th><?php echo $fila['Plata']?></th>
@@ -130,8 +140,7 @@
   </aside>
 </div>
   <footer>
-    <p>All Sports SRL - Copyright 2024 MIRA EL ENCARGADO EN DISNEUPUSL PUNTO COM AHORA O TE MATAMOS MANDAMOS U SICARIO A
-      TU CASA</p>
+    <p>All Sports SRL - Copyright 2024</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="js/main.js" crossorigin="anonymous"></script>
