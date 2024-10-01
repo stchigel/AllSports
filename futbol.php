@@ -53,28 +53,28 @@
         <table>
             <thead>
                 <tr class="futbolhead">
-                    <th> # | </th>
-                    <th> Equipo | </th>
-                    <th><a href="?ft=Jugados">PJ</a> | </th>
-                    <th><a href="?ft=Ganados">PG</a> | </th>
-                    <th><a href="?ft=Empatados">PE</a> | </th>
-                    <th><a href="?ft=Perdidos">PP</a> | </th>
-                    <th><a href="?ft=Goles-a-Favor">GF</a> | </th>
-                    <th><a href="?ft=Goles-en-Contra">GC</a> | </th>
-                    <th><a href="?ft=DIF">DIF</a> | </th>
-                    <th><a href="?ft=PTS">PTS</a> | </th>
+                    <th> #</th>
+                    <th> Equipo</th>
+                    <th><a href="?ft=Jugados">PJ</a></th>
+                    <th><a href="?ft=Ganados">PG</a></th>
+                    <th><a href="?ft=Empatados">PE</a></th>
+                    <th><a href="?ft=Perdidos">PP</a></th>
+                    <th><a href="?ft='Goles-a-Favor'">GF</a></th>
+                    <th><a href="?ft='Goles-en-Contra'">GC</a></th>
+                    <th><a href="?ft=DIF">DIF</a></th>
+                    <th><a href="?ft=PTS">PTS</a></th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
         if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
-            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Puntos;");
+            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Puntos desc limit 20;");
           } else {
             $ft = $_GET['ft'];
             if ($ft=="DIF"){
-                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Goles-a-Favor - Goles-en-Contra;");
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `Goles-a-Favor` - `Goles-en-Contra` desc limit 20;");
             }else{
-                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft;");
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft desc limit 20;");
             }
           }
 

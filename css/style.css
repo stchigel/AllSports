@@ -103,7 +103,7 @@ footer img {
 
 
 .futbolhead {
-    padding-left: 10px;
+    padding-left: 20px;
     text-align: center;
     text-size-adjust: 10px;
 }
@@ -351,13 +351,22 @@ aside p {
     background-color: var(--r);
 }
 
-.menunav2 a {
+.menunav2 a, .menunav2 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 550;
     text-decoration: none;
     color: var(--w);
     padding-left: 5px;
     padding-right: 5px;
+    margin-bottom: 0;
+}
+
+.subms {
+    display: none;
+}
+
+.subm {
+    margin-left: 10px;
 }
 
 .menunav2 .divlink:hover {
@@ -378,6 +387,9 @@ aside p {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+td {
+    text-align: center;
+}
 
 @media (min-width: 500px) {
     header div {

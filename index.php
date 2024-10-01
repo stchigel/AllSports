@@ -52,12 +52,24 @@ function country2flag(string $countryCode): string
     </div>
   </header>
   <div class="menunav2">
-      <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
+      <div class="divlink futbolm"><p>Futbol</p></div>
+      <div class="subfutbolm subms">
+        <div class="divlink subm ligasm"><p>Ligas</p></div>
+        <div class="subligasm subms">
+          <div class="divlink"><a href="" class="subm">Liga Española</a></div>
+          <div class="divlink"><a href="" class="subm">Liga Pene</a></div>
+        </div>
+        <div class="divlink subm confm"><p>Confederaciones</p></div>
+        <div class="subconfm subms">
+          <div class="divlink"><a href="" class="subm">UEFA</a></div>
+          <div class="divlink"><a href="" class="subm">COCAINA</a></div>
+        </div>
+      </div>
       <div class="divlink"><a href="" class="link">Tennis</a></div>
       <div class="divlink"><a href="" class="link">F1</a></div>
       <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
       <div class="divlink"><a href="" class="link">Medallero</a></div>
-    </div>
+  </div>
 <div class="asideynews">
   <aside>
     <div class="medallero">
@@ -140,7 +152,7 @@ function country2flag(string $countryCode): string
   </aside>
 </div>
   <footer>
-    <p>All Sports SRL - Copyright 2024</p>
+    <p>&copy; All Sports SRL - 2024</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="js/main.js" crossorigin="anonymous"></script>
