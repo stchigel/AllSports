@@ -328,8 +328,7 @@ aside p {
 
 
 .headernoti {
-    width: 80%;
-    margin: auto;
+    width: 100%;
 }
 
 .headernoti img{
@@ -338,8 +337,7 @@ aside p {
 }
 
 .notimg {
-    width: 75%;
-    margin: auto;
+    width: 100%;
 }
 
 .menunav1 {
@@ -361,12 +359,16 @@ aside p {
     margin-bottom: 0;
 }
 
-.subms {
-    display: none;
-}
-
 .subm {
     margin-left: 10px;
+}
+
+.submm {
+    margin-left: 20px;
+}
+
+.subms {
+    display: none;
 }
 
 .menunav2 .divlink:hover {
@@ -392,6 +394,11 @@ td {
 }
 
 @media (min-width: 500px) {
+    .headernoti {
+        width: 80%;
+        margin: auto;
+    }
+    
     header div {
         display: flex;
         align-items: center;
@@ -428,6 +435,10 @@ aside {
 }
 
 @media (min-width: 700px) {
+    .notimg {
+        width: 75%;
+        margin: auto;
+    }
     #news-section {
         width: 630px;
     }

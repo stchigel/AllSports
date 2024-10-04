@@ -42,12 +42,27 @@
     </div>
   </header>
   <div class="menunav2">
-      <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
+      <div class="divlink futbolm"><p>Futbol</p></div>
+      <div class="subfutbolm subms">
+        <div class="divlink subm ligasm"><p>Ligas</p></div>
+        <div class="subligasm subms">
+          <div class="divlink"><a href="" class="subm">Liga Española</a></div>
+          <div class="divlink"><a href="" class="subm">Liga Alemana</a></div>
+          <div class="divlink"><a href="" class="subm">Liga Inglesa</a></div>
+          <div class="divlink"><a href="" class="subm">Liga Italiana</a></div>
+          <div class="divlink"><a href="" class="subm">Liga Francesa</a></div>
+        </div>
+        <div class="divlink subm confm"><p>Confederaciones</p></div>
+        <div class="subconfm subms">
+          <div class="divlink"><a href="" class="subm">UEFA</a></div>
+          <div class="divlink"><a href="" class="subm">CONCAF</a></div>
+        </div>
+      </div>
       <div class="divlink"><a href="" class="link">Tennis</a></div>
       <div class="divlink"><a href="" class="link">F1</a></div>
       <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
       <div class="divlink"><a href="" class="link">Medallero</a></div>
-    </div>
+  </div>
     <section class="tmain">
         <div class="table_wrapper">
         <table>
