@@ -31,7 +31,7 @@
     <div class="menunav1">
       <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
       <div class="divlink"><a href="" class="link">Tennis</a></div>
-      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink"><a href="/F1.php" class="link">F1</a></div>
       <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
       <div class="divlink"><a href="" class="link">Medallero</a></div>
     </div>
@@ -54,7 +54,11 @@
         </div>
       </div>
       <div class="divlink"><a href="" class="link">Tennis</a></div>
-      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink f1m"><p>F1</p></div>
+      <div class="subf1m subms">
+        <div class="divlink submm"><a href="">Pilotos</a></div>
+        <div class="divlink submm"><a href="">Constructoras</a></div>
+      </div>
       <div class="divlink mmam"><p>MMA</p></div>
       <div class="submmam subms">
         <div class="divlink subm divisionesm"><p>Divisiones</p></div>

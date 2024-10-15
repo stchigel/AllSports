@@ -72,45 +72,53 @@
         <table>
             <thead>
                 <tr class="futbolhead">
-                    <th> #</th>
-                    <th> Equipo</th>
-                    <th><a href="?ft=Jugados">PJ</a></th>
-                    <th><a href="?ft=Ganados">PG</a></th>
-                    <th><a href="?ft=Empatados">PE</a></th>
-                    <th><a href="?ft=Perdidos">PP</a></th>
-                    <th><a href="?ft='Goles-a-Favor'">GF</a></th>
-                    <th><a href="?ft='Goles-en-Contra'">GC</a></th>
-                    <th><a href="?ft=DIF">DIF</a></th>
-                    <th><a href="?ft=PTS">PTS</a></th>
+                    <th> # </th>
+                    <th>🌎</th>
+                    <th><a href="?ft=Oro">🟡</a></th>
+                    <th><a href="?ft=Plata">⚪</a></th>
+                    <th><a href="?ft=Bronce">🟤</a></th>
+                    <th><a href="?ft=Sum">⭕</a></th>
                 </tr>
             </thead>
             <tbody>
-                <?php 
-        if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
-            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Puntos desc limit 20;");
-          } else {
-            $ft = $_GET['ft'];
-            if ($ft=="DIF"){
-                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `Goles-a-Favor` - `Goles-en-Contra` desc limit 20;");
-            }else{
-                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft desc limit 20;");
+            <?php 
+            $query = "SELECT p.Nombre AS Pais, COUNT(CASE WHEN m.Tipo = 1 THEN 1 END) AS Oro, COUNT(CASE WHEN m.Tipo = 2 THEN 1 END) AS Plata, COUNT(CASE WHEN m.Tipo = 3 THEN 1 END) AS Bronce
+            FROM Pais p JOIN Atleta a ON p.idPais = a.Pais_idPais JOIN Medalla m ON a.idAtleta = m.Atleta_idAtleta GROUP BY p.Nombre
+            ORDER BY Oro DESC, Plata DESC, Bronce DESC;";
+            $query2 = "SELECT p.Nombre AS Pais, COUNT(CASE WHEN m.Tipo = 1 THEN 1 END) AS Oro, COUNT(CASE WHEN m.Tipo = 2 THEN 1 END) AS Plata, COUNT(CASE WHEN m.Tipo = 3 THEN 1 END) AS Bronce
+            FROM Pais p JOIN Atleta a ON p.idPais = a.Pais_idPais JOIN Medalla m ON a.idAtleta = m.Atleta_idAtleta GROUP BY p.Nombre
+            ORDER BY Plata DESC, Oro DESC, Bronce DESC;";
+            $query3 = "SELECT p.Nombre AS Pais, COUNT(CASE WHEN m.Tipo = 1 THEN 1 END) AS Oro, COUNT(CASE WHEN m.Tipo = 2 THEN 1 END) AS Plata, COUNT(CASE WHEN m.Tipo = 3 THEN 1 END) AS Bronce
+            FROM Pais p JOIN Atleta a ON p.idPais = a.Pais_idPais JOIN Medalla m ON a.idAtleta = m.Atleta_idAtleta GROUP BY p.Nombre
+            ORDER BY Bronce DESC, Oro DESC, Plata DESC;";
+            $query4 = "SELECT p.Nombre AS Pais, COUNT(CASE WHEN m.Tipo = 1 THEN 1 END) AS Oro, COUNT(CASE WHEN m.Tipo = 2 THEN 1 END) AS Plata, COUNT(CASE WHEN m.Tipo = 3 THEN 1 END) AS Bronce
+            FROM Pais p JOIN Atleta a ON p.idPais = a.Pais_idPais JOIN Medalla m ON a.idAtleta = m.Atleta_idAtleta GROUP BY p.Nombre
+            ORDER BY (Oro+Plata+Bronce) DESC, Oro DESC, Plata DESC, Bronce DESC;";
+            if (empty($_GET['ft']) or $_GET['ft']=="Oro") {
+              $resultados = mysqli_query($conexion, $query);
+            } else {
+              $ft = $_GET['ft'];
+              if ($ft=="Plata"){
+                  $resultados = mysqli_query($conexion, $query2);
+              }else if ($ft=="Bronce"){
+                  $resultados = mysqli_query($conexion, $query3);
+              }else if ($ft=="Sum"){
+                  $resultados = mysqli_query($conexion, $query4);
+              } else {
+                  $resultados = mysqli_query($conexion, $query);
+              }
             }
-          }
-
-        $tmpCount = 1;
-        while($fila=mysqli_fetch_assoc($resultados)){ 
+            $tmpCount = 1;
+            while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
            ?>
                 <tr>
-                    <th class="mnsz"><?php echo "ㅤ   ".$tmpCount?></th>
-                    <th class="wrp"><?php echo $fila['Nombre']?></th>
-                    <th class="mnsz"><?php echo $fila['Jugados']?></th>
-                    <th class="mnsz"><?php echo $fila['Ganados']?></th>
-                    <th class="mnsz"><?php echo $fila['Empatados']?></th>
-                    <th class="mnsz"><?php echo $fila['Perdidos']?></th>
-                    <th><?php echo $fila['Goles-a-Favor']?></th>
-                    <th><?php echo $fila['Goles-en-Contra']?></th>
-                    <th><?php echo $fila['Goles-a-Favor'] - $fila['Goles-en-Contra']?></th>
-                    <th><?php echo $fila['Puntos']?></th>
+                    <th><?php echo "ㅤ   ".$tmpCount?></th>
+                    <th><?php echo country2flag($fila['Pais']);?></th>
+                    
+                    <th><?php echo $fila['Oro']?></th>
+                    <th><?php echo $fila['Plata']?></th>
+                    <th><?php echo $fila['Bronce']?></th>
+                    <th><?php echo $fila['Oro']+$fila['Plata']+$fila['Bronce']?></th>
                 </tr>
                 <?php
         $tmpCount ++; }

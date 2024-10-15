@@ -46,9 +46,9 @@ function country2flag(string $countryCode): string
     <div class="menunav1">
       <div class="divlink"><a href="/futbol.php" class="link">Futbol</a></div>
       <div class="divlink"><a href="" class="link">Tennis</a></div>
-      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink"><a href="/F1.php" class="link">F1</a></div>
       <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
-      <div class="divlink"><a href="" class="link">Medallero</a></div>
+      <div class="divlink"><a href="/medallero.php" class="link">Medallero</a></div>
     </div>
   </header>
   <div class="menunav2">
@@ -69,7 +69,11 @@ function country2flag(string $countryCode): string
         </div>
       </div>
       <div class="divlink"><a href="" class="link">Tennis</a></div>
-      <div class="divlink"><a href="" class="link">F1</a></div>
+      <div class="divlink f1m"><p>F1</p></div>
+      <div class="subf1m subms">
+        <div class="divlink submm"><a href="">Pilotos</a></div>
+        <div class="divlink submm"><a href="">Constructoras</a></div>
+      </div>
       <div class="divlink mmam"><p>MMA</p></div>
       <div class="submmam subms">
         <div class="divlink subm divisionesm"><p>Divisiones</p></div>
@@ -96,7 +100,7 @@ function country2flag(string $countryCode): string
           <div class="divlink submm"><a href="atletas.php?dv=His&sel=Desiciones">Más Decisiones</a></div>
         </div>
       </div>
-      <div class="divlink"><a href="" class="link">Medallero</a></div>
+      <div class="divlink"><a href="medallero.php" class="link">Medallero</a></div>
   </div>
 <div class="asideynews">
   <aside>
@@ -106,7 +110,7 @@ function country2flag(string $countryCode): string
             <thead>
                 <tr class="futbolhead">
                     <th> # | </th>
-                    <th> 🌎 | </th>
+                    <th>🌎 | </th>
                     <th>🟡 | </th>
                     <th>⚪ | </th>
                     <th>🟤 | </th>
@@ -175,7 +179,7 @@ function country2flag(string $countryCode): string
   </div>
   <aside>
     <div class="imgad">
-      <img src="img/image.jpg" alt="">
+      <a href="https://www.disneyplus.com/es-ar/series/el-encargado/a897EzMg7taw"><img src="img/image.jpg" alt=""></a>
     </div>
   </aside>
 </div>

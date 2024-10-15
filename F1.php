@@ -38,7 +38,7 @@
       <div class="divlink"><a href="" class="link">Tennis</a></div>
       <div class="divlink"><a href="/F1.php" class="link">F1</a></div>
       <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
-      <div class="divlink"><a href="" class="link">Medallero</a></div>
+      <div class="divlink"><a href="/medallero.php" class="link">Medallero</a></div>
     </div>
   </header>
   <div class="menunav2">
@@ -73,15 +73,26 @@
             <thead>
                 <tr class="futbolhead">
                     <th> #</th>
-                    <th> Equipo</th>
-                    <th><a href="?ft=Jugados">PJ</a></th>
-                    <th><a href="?ft=Ganados">PG</a></th>
-                    <th><a href="?ft=Empatados">PE</a></th>
-                    <th><a href="?ft=Perdidos">PP</a></th>
-                    <th><a href="?ft='Goles-a-Favor'">GF</a></th>
-                    <th><a href="?ft='Goles-en-Contra'">GC</a></th>
-                    <th><a href="?ft=DIF">DIF</a></th>
-                    <th><a href="?ft=PTS">PTS</a></th>
+                    <th> Piloto</th>
+                    <th><a href="?ft=Jugados">PTS</a></th>
+                    <th><a href="?ft=Ganados">MEL</a></th>
+                    <th><a href="?ft=Empatados">BAH</a></th>
+                    <th><a href="?ft=Perdidos">MON</a></th>
+                    <th><a href="?ft='Goles-a-Favor'">SIL</a></th>
+                    <th><a href="?ft='Goles-en-Contra'">HUN</a></th>
+                    <th><a href="?ft=DIF">SPA-F</a></th>
+                    <th><a href="?ft=PTS">ZAN</a></th>
+                    <th><a href="?ft=Jugados">MONZ</a></th>
+                    <th><a href="?ft=Ganados">RUS</a></th>
+                    <th><a href="?ft=Empatados">SING</a></th>
+                    <th><a href="?ft=Perdidos">JAP</a></th>
+                    <th><a href="?ft='Goles-a-Favor'">EEUU</a></th>
+                    <th><a href="?ft='Goles-en-Contra'">MEX</a></th>
+                    <th><a href="?ft=DIF">ABU-D</a></th>
+                    <th><a href="?ft=PTS">AUST</a></th>
+                    <th><a href="?ft=DIF">TUR</a></th>
+                    <th><a href="?ft=PTS">ARAB</a></th>
+
                 </tr>
             </thead>
             <tbody>

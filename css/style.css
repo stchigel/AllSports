@@ -151,6 +151,7 @@ table {
     white-space: nowrap;
     background-color: var(--w);
     border-radius: 10px;
+    margin-top: 1%;
 }
 
 thead th a{

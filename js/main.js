@@ -21,6 +21,9 @@ const divisionesc = document.querySelector(".subdivisionesm");
 const mayores = document.querySelector(".mayoresm");
 const mayoresc = document.querySelector(".submayoresm");
 
+const f1 = document.querySelector(".f1m");
+const f1c = document.querySelector(".subf1m");
+
 function toggleMenu() {
   if (menu.style.display == "block") {
     menu.style.display = "none";
@@ -50,3 +53,4 @@ conf.addEventListener("click", () => toggleMenuc(confc));
 mma.addEventListener("click", () => toggleMenuc(mmac));
 divisiones.addEventListener("click", () => toggleMenuc(divisionesc));
 mayores.addEventListener("click", () => toggleMenuc(mayoresc));
+f1.addEventListener("click", () => toggleMenuc(f1c));
