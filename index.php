@@ -68,11 +68,26 @@ function country2flag(string $countryCode): string
           <div class="divlink submm"><a href="">CONCAF</a></div>
         </div>
       </div>
-      <div class="divlink"><a href="" class="link">Tennis</a></div>
+      <div class="divlink tenism"><p>Tenis</p></div>
+      <div class="subtenism subms">
+        <div class="divlink subm"><a href="">Puntos</a></div>
+        <div class="divlink subm singlem"><p>Single</p></div>
+        <div class="subsinglem subms">
+          <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
+          <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
+          <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        </div>
+        <div class="divlink subm doblem"><p>Dobles</p></div>
+        <div class="subdoblem subms">
+          <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
+          <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
+          <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        </div>
+      </div>
       <div class="divlink f1m"><p>F1</p></div>
       <div class="subf1m subms">
-        <div class="divlink submm"><a href="">Pilotos</a></div>
-        <div class="divlink submm"><a href="">Constructoras</a></div>
+        <div class="divlink subm"><a href="/F1.php">Pilotos</a></div>
+        <div class="divlink subm"><a href="/F1.php">Constructoras</a></div>
       </div>
       <div class="divlink mmam"><p>MMA</p></div>
       <div class="submmam subms">
@@ -100,7 +115,7 @@ function country2flag(string $countryCode): string
           <div class="divlink submm"><a href="atletas.php?dv=His&sel=Desiciones">Más Decisiones</a></div>
         </div>
       </div>
-      <div class="divlink"><a href="medallero.php" class="link">Medallero</a></div>
+      <div class="divlink"><a href="" class="link">Medallero</a></div>
   </div>
 <div class="asideynews">
   <aside>

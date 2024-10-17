@@ -24,6 +24,15 @@ const mayoresc = document.querySelector(".submayoresm");
 const f1 = document.querySelector(".f1m");
 const f1c = document.querySelector(".subf1m");
 
+const tenis = document.querySelector(".tenism");
+const tenisc = document.querySelector(".subtenism");
+
+const single = document.querySelector(".singlem");
+const singlec = document.querySelector(".subsinglem");
+
+const doble = document.querySelector(".doblem");
+const doblec = document.querySelector(".subdoblem");
+
 function toggleMenu() {
   if (menu.style.display == "block") {
     menu.style.display = "none";
@@ -53,4 +62,9 @@ conf.addEventListener("click", () => toggleMenuc(confc));
 mma.addEventListener("click", () => toggleMenuc(mmac));
 divisiones.addEventListener("click", () => toggleMenuc(divisionesc));
 mayores.addEventListener("click", () => toggleMenuc(mayoresc));
+
 f1.addEventListener("click", () => toggleMenuc(f1c));
+
+tenis.addEventListener("click", () => toggleMenuc(tenisc));
+single.addEventListener("click", () => toggleMenuc(singlec));
+doble.addEventListener("click", () => toggleMenuc(doblec));

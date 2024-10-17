@@ -46,25 +46,65 @@
       <div class="subfutbolm subms">
         <div class="divlink subm ligasm"><p>Ligas</p></div>
         <div class="subligasm subms">
-          <div class="divlink"><a href="" class="subm">Liga Española</a></div>
-          <div class="divlink"><a href="" class="subm">Liga Alemana</a></div>
-          <div class="divlink"><a href="" class="subm">Liga Inglesa</a></div>
-          <div class="divlink"><a href="" class="subm">Liga Italiana</a></div>
-          <div class="divlink"><a href="" class="subm">Liga Francesa</a></div>
+          <div class="divlink submm"><a href="">Liga Española</a></div>
+          <div class="divlink submm"><a href="">Liga Alemana</a></div>
+          <div class="divlink submm"><a href="">Liga Inglesa</a></div>
+          <div class="divlink submm"><a href="">Liga Italiana</a></div>
+          <div class="divlink submm"><a href="">Liga Francesa</a></div>
         </div>
         <div class="divlink subm confm"><p>Confederaciones</p></div>
         <div class="subconfm subms">
-          <div class="divlink"><a href="" class="subm">UEFA</a></div>
-          <div class="divlink"><a href="" class="subm">CONCAF</a></div>
+          <div class="divlink submm"><a href="">UEFA</a></div>
+          <div class="divlink submm"><a href="">CONCAF</a></div>
         </div>
       </div>
-      <div class="divlink"><a href="" class="link">Tennis</a></div>
+      <div class="divlink tenism"><p>Tenis</p></div>
+      <div class="subtenism subms">
+        <div class="divlink subm"><a href="">Puntos</a></div>
+        <div class="divlink subm singlem"><p>Single</p></div>
+        <div class="subsinglem subms">
+          <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
+          <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
+          <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        </div>
+        <div class="divlink subm doblem"><p>Dobles</p></div>
+        <div class="subdoblem submm">
+          <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
+          <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
+          <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        </div>
+      </div>
       <div class="divlink f1m"><p>F1</p></div>
       <div class="subf1m subms">
-        <div class="divlink submm"><a href="">Pilotos</a></div>
-        <div class="divlink submm"><a href="">Constructoras</a></div>
+        <div class="divlink subm"><a href="/F1.php">Pilotos</a></div>
+        <div class="divlink subm"><a href="/F1.php">Constructoras</a></div>
       </div>
-      <div class="divlink"><a href="/atletas.php?dv=PfP" class="link">MMA</a></div>
+      <div class="divlink mmam"><p>MMA</p></div>
+      <div class="submmam subms">
+        <div class="divlink subm divisionesm"><p>Divisiones</p></div>
+        <div class="subdivisionesm subms">
+        <div class="divlink submm"><a href="atletas.php?dv=PfP">Libra por Libra</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Flyweight">Peso Mosca</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Bantamweight">Peso Gallo</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Featherweight">Peso Pluma</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Lightweight">Peso Ligero</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Welterweight">Peso Welter</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Middleweight">Peso Medio</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Light Heavyweight">Peso Semipesado</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=Heavyweight">Peso Pesado</a></div>
+        </div>
+        <div class="divlink subm mayoresm"><p>Mayores</p></div>
+        <div class="submayoresm subms">
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=peleas">Más Peleas</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=victorias">Más Victorias</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=derrotas">Más Derrotas</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=victorias_titulo">Más Victorias Titulo</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=Finalizaciones">Más Finalizaciones</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=KO">Más KO</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=SUM">Más SUM</a></div>
+          <div class="divlink submm"><a href="atletas.php?dv=His&sel=Desiciones">Más Decisiones</a></div>
+        </div>
+      </div>
       <div class="divlink"><a href="" class="link">Medallero</a></div>
   </div>
     <section class="tmain">
