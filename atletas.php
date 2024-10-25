@@ -63,7 +63,7 @@
           <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
         </div>
         <div class="divlink subm doblem"><p>Dobles</p></div>
-        <div class="subdoblem submm">
+        <div class="subdoblem subms">
           <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
           <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
           <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
@@ -103,27 +103,7 @@
       <div class="divlink"><a href="" class="link">Medallero</a></div>
   </div>    
     <div id="des-section">
-        <div id="menu">
-            <ul>
-                <li><a href="?dv=PfP">Libra por Libra</a></li>
-                <li><a href="?dv=Flyweight">Peso Mosca</a></li>
-                <li><a href="?dv=Bantamweight">Peso Gallo</a></li>
-                <li><a href="?dv=Featherweight">Peso Pluma</a></li>
-                <li><a href="?dv=Lightweight">Peso Ligero</a></li>
-                <li><a href="?dv=Welterweight">Peso Welter</a></li>
-                <li><a href="?dv=Middleweight">Peso Medio</a></li>
-                <li><a href="?dv=Light Heavyweight">Peso Semipesado</a></li>
-                <li><a href="?dv=Heavyweight">Peso Pesado</a></li>
-                <li><a href="?dv=His&sel=peleas">Más peleas</a></li>
-                <li><a href="?dv=His&sel=victorias">Más victorias</a></li>
-                <li><a href="?dv=His&sel=derrotas">Más derrotas</a></li>
-                <li><a href="?dv=His&sel=victorias_titulo">Más victorias titulares</a></li>
-                <li><a href="?dv=His&sel=Finalizaciones">Más finalizaciones</a></li>
-                <li><a href="?dv=His&sel=KO">Más KO</a></li>
-                <li><a href="?dv=His&sel=SUM">Más SUM</a></li>
-                <li><a href="?dv=His&sel=Desiciones">Más decisiones</a></li>
-            </ul>
-        </div>
+
       <div class="padding">
       <?php 
         $dv = $_GET["dv"];

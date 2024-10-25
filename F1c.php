@@ -115,7 +115,7 @@
             <thead>
                 <tr class="futbolhead">
                     <th> #</th>
-                    <th> <a href="../F1c.php">Piloto</a></th>
+                    <th> <a href="../F1.php">Constructora</a></th>
                     <th><a href="?ft=0">PTS</a></th><!--suma de puntos de todas las carreras-->
                     <th><a href="?ft=1">MEL</a></th><!-- id1-->
                     <th><a href="?ft=2">BAH</a></th><!-- id2-->
@@ -143,7 +143,7 @@
                 <?php 
         if (empty($_GET['ft']) or $_GET['ft']=="0" or $_GET['ft']>20 or $_GET['ft']<0) {
           $querypts = "SELECT 
-          Pilotos.apellido, 
+          Pilotos.constructora, 
           SUM(CASE WHEN Pilotos_has_Carrera.Carrera_idCarrera = 1 THEN Pilotos_has_Carrera.puntos ELSE 0 END) AS MEL,
           SUM(CASE WHEN Pilotos_has_Carrera.Carrera_idCarrera = 2 THEN Pilotos_has_Carrera.puntos ELSE 0 END) AS BAH,
           SUM(CASE WHEN Pilotos_has_Carrera.Carrera_idCarrera = 3 THEN Pilotos_has_Carrera.puntos ELSE 0 END) AS MON,
@@ -191,7 +191,7 @@
       JOIN 
           Pilotos_has_Carrera ON Pilotos.idPilotos = Pilotos_has_Carrera.Pilotos_idPilotos
       GROUP BY 
-          Pilotos.apellido 
+          Pilotos.constructora 
       ORDER BY 
           PTS DESC;
       ";
@@ -199,7 +199,7 @@
           } else {
             $ft = $_GET['ft'];
             $queryft = "SELECT 
-            Pilotos.apellido, 
+            Pilotos.constructora, 
             SUM(CASE WHEN Pilotos_has_Carrera.Carrera_idCarrera = 1 THEN Pilotos_has_Carrera.puntos ELSE 0 END) AS MEL,
             SUM(CASE WHEN Pilotos_has_Carrera.Carrera_idCarrera = 2 THEN Pilotos_has_Carrera.puntos ELSE 0 END) AS BAH,
             SUM(CASE WHEN Pilotos_has_Carrera.Carrera_idCarrera = 3 THEN Pilotos_has_Carrera.puntos ELSE 0 END) AS MON,
@@ -247,7 +247,7 @@
         JOIN 
             Pilotos_has_Carrera ON Pilotos.idPilotos = Pilotos_has_Carrera.Pilotos_idPilotos
         GROUP BY 
-            Pilotos.apellido 
+            Pilotos.constructora 
         ORDER BY 
             {$carreras[$ft]} DESC;";
             $resultados = mysqli_query($conexion, $queryft);
@@ -258,7 +258,7 @@
            ?>
                 <tr>
                     <th class="mnsz"><?php echo "ㅤ   ".$tmpCount?></th>
-                    <th class="wrp"><?php echo $fila['apellido']?></th>
+                    <th class="wrp"><?php echo $fila['constructora']?></th>
                     <th><?php echo $fila['PTS']?></th>
                     <th><?php echo $fila['MEL']?></th>
                     <th><?php echo $fila['BAH']?></th>

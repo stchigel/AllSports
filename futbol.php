@@ -114,12 +114,13 @@
                 <tr class="futbolhead">
                     <th> #</th>
                     <th> Equipo</th>
+                    <th> Liga</th>
                     <th><a href="?ft=Jugados">PJ</a></th>
                     <th><a href="?ft=Ganados">PG</a></th>
                     <th><a href="?ft=Empatados">PE</a></th>
                     <th><a href="?ft=Perdidos">PP</a></th>
-                    <th><a href="?ft='Goles-a-Favor'">GF</a></th>
-                    <th><a href="?ft='Goles-en-Contra'">GC</a></th>
+                    <th><a href="?ft='GolesFavor'">GF</a></th>
+                    <th><a href="?ft='GolesContra'">GC</a></th>
                     <th><a href="?ft=DIF">DIF</a></th>
                     <th><a href="?ft=PTS">PTS</a></th>
                 </tr>
@@ -131,7 +132,7 @@
           } else {
             $ft = $_GET['ft'];
             if ($ft=="DIF"){
-                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `Goles-a-Favor` - `Goles-en-Contra` desc limit 20;");
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by `GolesFavor` - `GolesContra` desc limit 20;");
             }else{
                 $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft desc limit 20;");
             }
@@ -143,13 +144,14 @@
                 <tr>
                     <th class="mnsz"><?php echo "ㅤ   ".$tmpCount?></th>
                     <th class="wrp"><?php echo $fila['Nombre']?></th>
+                    <th class="wrp"><?php echo $fila['Liga']?></th>
                     <th class="mnsz"><?php echo $fila['Jugados']?></th>
                     <th class="mnsz"><?php echo $fila['Ganados']?></th>
                     <th class="mnsz"><?php echo $fila['Empatados']?></th>
                     <th class="mnsz"><?php echo $fila['Perdidos']?></th>
-                    <th><?php echo $fila['Goles-a-Favor']?></th>
-                    <th><?php echo $fila['Goles-en-Contra']?></th>
-                    <th><?php echo $fila['Goles-a-Favor'] - $fila['Goles-en-Contra']?></th>
+                    <th><?php echo $fila['GolesFavor']?></th>
+                    <th><?php echo $fila['GolesContra']?></th>
+                    <th><?php echo $fila['GolesFavor'] - $fila['GolesContra']?></th>
                     <th><?php echo $fila['Puntos']?></th>
                 </tr>
                 <?php

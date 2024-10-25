@@ -68,7 +68,7 @@
           <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
         </div>
         <div class="divlink subm doblem"><p>Dobles</p></div>
-        <div class="subdoblem submm">
+        <div class="subdoblem subms">
           <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
           <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
           <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
