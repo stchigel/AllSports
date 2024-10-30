@@ -115,18 +115,45 @@
                     <th> #</th>
                     <th> Equipo</th>
                     <th> Liga</th>
-                    <th><a href="?ft=Jugados">PJ</a></th>
-                    <th><a href="?ft=Ganados">PG</a></th>
-                    <th><a href="?ft=Empatados">PE</a></th>
-                    <th><a href="?ft=Perdidos">PP</a></th>
-                    <th><a href="?ft='GolesFavor'">GF</a></th>
-                    <th><a href="?ft='GolesContra'">GC</a></th>
-                    <th><a href="?ft=DIF">DIF</a></th>
-                    <th><a href="?ft=PTS">PTS</a></th>
+                    <th><a href="?ft=Jugados&lc=<?php echo $_GET['lc'];?>">PJ</a></th>
+                    <th><a href="?ft=Ganados&lc=<?php echo $_GET['lc'];?>">PG</a></th>
+                    <th><a href="?ft=Empatados&lc=<?php echo $_GET['lc'];?>">PE</a></th>
+                    <th><a href="?ft=Perdidos&lc=<?php echo $_GET['lc'];?>">PP</a></th>
+                    <th><a href="?ft='GolesFavor'&lc=<?php echo $_GET['lc'];?>">GF</a></th>
+                    <th><a href="?ft='GolesContra'&lc=<?php echo $_GET['lc'];?>">GC</a></th>
+                    <th><a href="?ft=DIF&lc=<?php echo $_GET['lc'];?>">DIF</a></th>
+                    <th><a href="?ft=PTS&lc=<?php echo $_GET['lc'];?>">PTS</a></th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
+      if($_GET['loc']=="l"){
+        $lc = $_GET['lc'];
+        if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
+            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` where Liga = $lc order by Puntos desc limit 20;");
+          } else {
+            $ft = $_GET['ft'];
+            if ($ft=="DIF"){
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` where Liga = $lc order by `GolesFavor` - `GolesContra` desc limit 20;");
+            }else{
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` where Liga = $lc order by $ft desc limit 20;");
+            }
+          }
+        }
+      else if ($_GET['loc']=="c"){
+        $lc = $_GET['lc'];
+        if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
+            $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` where Conf = $lc order by Puntos desc limit 20;");
+          } else {
+            $ft = $_GET['ft'];
+            if ($ft=="DIF"){
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` where Conf = $lc order by `GolesFavor` - `GolesContra` desc limit 20;");
+            }else{
+                $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` where Conf = $lc order by $ft desc limit 20;");
+            }
+          }
+        }
+      else {
         if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
             $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by Puntos desc limit 20;");
           } else {
@@ -137,6 +164,7 @@
                 $resultados = mysqli_query($conexion,"select * from `Futbol-equipos` order by $ft desc limit 20;");
             }
           }
+        }
 
         $tmpCount = 1;
         while($fila=mysqli_fetch_assoc($resultados)){ 
