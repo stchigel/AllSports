@@ -125,7 +125,7 @@
         <p>Ligas</p>
       </div>
       <div class="subligasm subms">
-        <div class="divlink submm"><a href="">Liga Española</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Española&loc=l">Liga Española</a></div>
         <div class="divlink submm"><a href="">Liga Alemana</a></div>
         <div class="divlink submm"><a href="">Liga Inglesa</a></div>
         <div class="divlink submm"><a href="">Liga Italiana</a></div>
