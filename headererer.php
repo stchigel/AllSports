@@ -1,14 +1,4 @@
 <?php
-    $servername = "127.0.0.1";
-    $database = "AllSports";
-    $username = "alumno";
-    $password = "alumnoipm";
-
-
-    $conexion = mysqli_connect($servername, $username, $password, $database); // se crea la conexion
-    if (!$conexion) {
-        die("Conexion fallida: " . mysqli_connect_error());
-    }
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,18 +39,11 @@
         <p>Ligas</p>
       </div>
       <div class="subligasm subms">
-        <div class="divlink submm"><a href="">Liga Española</a></div>
-        <div class="divlink submm"><a href="">Liga Alemana</a></div>
-        <div class="divlink submm"><a href="">Liga Inglesa</a></div>
-        <div class="divlink submm"><a href="">Liga Italiana</a></div>
-        <div class="divlink submm"><a href="">Liga Francesa</a></div>
-      </div>
-      <div class="divlink subm confm">
-        <p>Confederaciones</p>
-      </div>
-      <div class="subconfm subms">
-        <div class="divlink submm"><a href="">UEFA</a></div>
-        <div class="divlink submm"><a href="">CONCAF</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=La%20Liga">Liga Española</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Premier%20League">Liga Inglesa</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Ligue%201">Liga Francesa</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Serie%20A">Liga Italiana</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Bundesliga">Liga Alemana</a></div>
       </div>
     </div>
     <div class="subtenism subms hh">
@@ -69,17 +52,17 @@
         <p>Single</p>
       </div>
       <div class="subsinglem subms">
-        <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
-        <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
-        <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=PTS&sd=s" class="">Mas titulos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=ganados&sd=s" class="">Mas ganados</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=perdidos&sd=s" class="">Mas perdidos</a></div>
       </div>
       <div class="divlink subm doblem">
         <p>Dobles</p>
       </div>
       <div class="subdoblem subms">
-        <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
-        <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
-        <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=PTS&sd=d" class="">Mas titulos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=ganados&sd=d" class="">Mas ganados</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=perdidos&sd=d" class="">Mas perdidos</a></div>
       </div>
     </div>
     <div class="subf1m subms hh">
@@ -125,18 +108,11 @@
         <p>Ligas</p>
       </div>
       <div class="subligasm subms">
-        <div class="divlink submm"><a href="futbol.php?lc=Española&loc=l">Liga Española</a></div>
-        <div class="divlink submm"><a href="">Liga Alemana</a></div>
-        <div class="divlink submm"><a href="">Liga Inglesa</a></div>
-        <div class="divlink submm"><a href="">Liga Italiana</a></div>
-        <div class="divlink submm"><a href="">Liga Francesa</a></div>
-      </div>
-      <div class="divlink subm confm">
-        <p>Confederaciones</p>
-      </div>
-      <div class="subconfm subms">
-        <div class="divlink submm"><a href="">UEFA</a></div>
-        <div class="divlink submm"><a href="">CONCAF</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=La%20Liga">Liga Española</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Premier%20League">Liga Inglesa</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Ligue%201">Liga Francesa</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Serie%20A">Liga Italiana</a></div>
+        <div class="divlink submm"><a href="futbol.php?lc=Bundesliga">Liga Alemana</a></div>
       </div>
     </div>
     <div class="divlink tenism">
@@ -148,17 +124,17 @@
         <p>Single</p>
       </div>
       <div class="subsinglem subms">
-        <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
-        <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
-        <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=PTS&sd=s" class="">Mas titulos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=ganados&sd=s" class="">Mas ganados</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=perdidos&sd=s" class="">Mas perdidos</a></div>
       </div>
       <div class="divlink subm doblem">
         <p>Dobles</p>
       </div>
       <div class="subdoblem subms">
-        <div class="divlink submm"><a href="" class="">Mas titulos</a></div>
-        <div class="divlink submm"><a href="" class="">Mas ganados</a></div>
-        <div class="divlink submm"><a href="" class="">Mas perdidos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=PTS&sd=d" class="">Mas titulos</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=ganados&sd=d" class="">Mas ganados</a></div>
+        <div class="divlink submm"><a href="tennis.php?ft=perdidos&sd=d" class="">Mas perdidos</a></div>
       </div>
     </div>
     <div class="divlink f1m">
@@ -166,7 +142,7 @@
     </div>
     <div class="subf1m subms">
       <div class="divlink subm"><a href="/F1.php">Pilotos</a></div>
-      <div class="divlink subm"><a href="/F1.php">Constructoras</a></div>
+      <div class="divlink subm"><a href="/F1c.php">Constructoras</a></div>
     </div>
     <div class="divlink mmam">
       <p>MMA</p>
@@ -200,7 +176,7 @@
         <div class="divlink submm"><a href="atletas.php?dv=His&sel=Desiciones">Más Decisiones</a></div>
       </div>
     </div>
-    <div class="divlink"><a href="" class="link">Medallero</a></div>
+    <div class="divlink"><a href="medallero.php" class="link">Medallero</a></div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

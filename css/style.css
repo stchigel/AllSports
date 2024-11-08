@@ -360,6 +360,11 @@ aside p {
     margin-bottom: 0;
 }
 
+.menunav3 {
+    z-index: 999;
+    position: absolute;
+}
+
 .menunav3 .hh {
     background-color: var(--r);
     width: 200px;

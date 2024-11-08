@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	8.0.39-0ubuntu0.22.04.1
 
+CREATE DATABASE AllSports;
+USE AllSports;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -304,7 +307,7 @@ CREATE TABLE `Peleadores` (
 
 LOCK TABLES `Peleadores` WRITE;
 /*!40000 ALTER TABLE `Peleadores` DISABLE KEYS */;
-INSERT INTO `Peleadores` VALUES (294,'Stipe','Miocic','20-4','Heavyweight',20,4,24,1,4,NULL,15,3,2,2,'Campeon Peso Pesado'),(295,'Francis','Ngannou','17-3','Heavyweight',17,3,20,2,9,NULL,12,4,1,1,'1. Peso Pesado'),(296,'Curtis','Blaydes','15-3','Heavyweight',15,3,18,3,NULL,NULL,10,2,3,0,'2.Peso Pesado'),(297,'Derrick','Lewis','25-7','Heavyweight',25,7,32,4,NULL,NULL,20,4,1,0,'3. Peso Pesado'),(298,'Cyril','Gane','10-1','Heavyweight',10,1,11,5,NULL,NULL,5,4,1,0,'4.Peso Pesado'),(299,'Alexander','Volkov','33-9','Heavyweight',33,9,42,6,NULL,NULL,23,7,3,0,'5. Peso Pesado'),(300,'Jairzinho','Rozenstruik','12-3','Heavyweight',12,3,15,7,NULL,NULL,11,1,0,0,'6. Peso Pesado'),(301,'Marcin','Tybura','22-6','Heavyweight',22,6,28,8,NULL,NULL,9,10,3,0,'7. Peso Pesado'),(302,'Walt','Harris','13-9','Heavyweight',13,9,22,9,NULL,NULL,13,0,0,0,'8. Peso Pesado'),(303,'Chris','Daukaus','11-3','Heavyweight',11,3,14,10,NULL,NULL,8,1,2,0,'9. Peso Pesado'),(304,'Alex','Pereira','12-2','Light Heavyweight',12,2,13,1,3,NULL,10,0,2,5,'Campeon Peso Semipesado'),(305,'Jan','Blachowicz','28-8','Light Heavyweight',28,8,36,2,NULL,NULL,8,4,16,1,'1. Peso Semipesado'),(306,'Jiri','Prochazka','28-3','Light Heavyweight',28,3,31,3,NULL,NULL,25,2,1,0,'2. Peso Semipesado'),(307,'Aleksandar','Rakic','14-2','Light Heavyweight',14,2,16,4,NULL,NULL,9,2,3,0,'3. Peso Semipesado'),(308,'Dominick','Reyes','12-3','Light Heavyweight',12,3,15,5,NULL,NULL,7,5,0,0,'4. Peso Semipesado'),(309,'Thiago','Santos','21-9','Light Heavyweight',21,9,30,6,NULL,NULL,15,2,3,0,'5. Peso Semipesado'),(310,'Magomed','Ankalaev','15-1','Light Heavyweight',15,1,16,7,NULL,NULL,9,2,4,0,'6. Peso Semipesado'),(311,'Anthony','Smith','34-16','Light Heavyweight',34,16,50,8,NULL,NULL,19,8,6,0,'7. Peso Semipesado'),(312,'Johnny','Walker','18-5','Light Heavyweight',18,5,23,9,NULL,NULL,15,2,1,0,'8. Peso Semipesado'),(313,'Paul','Craig','14-4','Light Heavyweight',14,4,18,10,NULL,NULL,2,7,3,0,'9. Peso Semipesado'),(314,'Dricus','Du Plessis','22-2','Middleweight',22,2,24,1,5,NULL,8,12,2,2,'Campeon Peso Medio'),(315,'Israel','Adesanya','21-1','Middleweight',21,1,22,2,NULL,NULL,15,3,3,2,'1. Peso Medio'),(316,'Robert','Whittaker','23-5','Middleweight',23,5,28,3,NULL,NULL,9,7,6,0,'2. Peso Medio'),(317,'Paulo','Costa','13-1','Middleweight',13,1,14,4,10,NULL,11,1,1,0,'3. Peso Medio'),(318,'Jared','Cannonier','13-5','Middleweight',13,5,18,5,NULL,NULL,9,3,1,0,'4. Peso Medio'),(319,'Derek','Brunson','22-7','Middleweight',22,7,29,6,NULL,NULL,13,7,1,0,'5. Peso Medio'),(320,'Kelvin','Gastelum','17-7','Middleweight',17,7,24,7,NULL,NULL,7,5,4,0,'6. Peso Medio'),(321,'Jack','Hermansson','22-6','Middleweight',22,6,28,8,NULL,NULL,11,5,2,0,'7. Peso Medio'),(322,'Darren','Till','18-3','Middleweight',18,3,21,9,NULL,NULL,10,3,1,0,'8. Peso Medio'),(323,'Marvin','Vettori','17-4','Middleweight',17,4,21,10,NULL,NULL,7,4,1,0,'9. Peso Medio'),(324,'Kamaru','Usman','19-1','Welterweight',19,1,20,1,8,NULL,9,5,5,4,'Campeon Peso Welter'),(325,'Colby','Covington','16-2','Welterweight',16,2,18,2,NULL,NULL,4,8,4,0,'1. Peso Welter'),(326,'Gilbert','Burns','19-3','Welterweight',19,3,22,3,NULL,NULL,6,10,3,0,'2. Peso Welter'),(327,'Leon','Edwards','18-3','Welterweight',18,3,21,4,NULL,NULL,6,9,2,0,'3. Peso Welter'),(328,'Stephen','Thompson','16-4','Welterweight',16,4,20,5,NULL,NULL,7,5,3,0,'4. Peso Welter'),(329,'Jorge','Masvidal','35-14','Welterweight',35,14,49,6,NULL,NULL,16,8,11,0,'5. Peso Welter'),(330,'Michael','Chiesa','18-4','Welterweight',18,4,22,7,NULL,NULL,5,10,2,0,'6. Peso Welter'),(331,'Neil','Magny','24-8','Welterweight',24,8,32,8,NULL,NULL,7,15,2,0,'7. Peso Welter'),(332,'Geoff','Neal','13-3','Welterweight',13,3,16,9,NULL,NULL,8,4,1,0,'8. Peso Welter'),(333,'Vicente','Luque','19-7','Welterweight',19,7,26,10,NULL,NULL,11,6,2,0,'9. Peso Welter'),(334,'Charles','Oliveira','34-10','Lightweight',34,10,44,1,2,NULL,10,21,3,3,'Campeon Peso Ligero'),(335,'Dustin','Poirier','27-6','Lightweight',27,6,33,2,NULL,NULL,14,9,4,0,'1. Peso Ligero'),(336,'Justin','Gaethje','22-3','Lightweight',22,3,25,3,NULL,NULL,19,2,1,0,'2. Peso Ligero'),(337,'Michael','Chandler','22-5','Lightweight',22,5,27,4,NULL,NULL,17,3,2,0,'3. Peso Ligero'),(338,'Tony','Ferguson','25-6','Lightweight',25,6,31,5,NULL,NULL,12,8,5,0,'4. Peso Ligero'),(339,'Islam','Makhachev','19-1','Lightweight',19,1,20,6,NULL,NULL,3,10,5,0,'5. Peso Ligero'),(340,'Dan','Hooker','20-10','Lightweight',20,10,30,7,NULL,NULL,12,6,2,0,'6. Peso Ligero'),(341,'Rafael','Dos Anjos','30-13','Lightweight',30,13,43,8,NULL,NULL,5,14,3,0,'7. Peso Ligero'),(342,'Conor','McGregor','22-6','Lightweight',22,6,28,9,NULL,NULL,19,2,1,0,'8. Peso Ligero'),(343,'Gregor','Gillespie','14-1','Lightweight',14,1,15,10,NULL,NULL,6,2,2,0,'9. Peso Ligero'),(344,'Ilia','Topuria','15-0','Featherweight',15,0,15,1,1,NULL,5,8,2,1,'Campeon Peso Pluma'),(345,'Alexander','Volkanovski','23-1','Featherweight',23,1,24,2,7,NULL,11,5,7,2,'1. Peso Pluma'),(346,'Max','Holloway','22-6','Featherweight',22,6,28,3,NULL,NULL,10,6,6,2,'2. Peso Pluma'),(347,'Brian','Ortega','15-1','Featherweight',15,1,16,4,NULL,NULL,3,7,4,0,'3. Peso Pluma'),(348,'Yair','Rodriguez','13-2','Featherweight',13,2,16,5,NULL,NULL,4,7,2,0,'4. Peso Pluma'),(349,'Chan Sung','Jung','16-6','Featherweight',16,6,22,6,NULL,NULL,6,10,0,0,'5. Peso Pluma'),(350,'Calvin','Kattar','22-5','Featherweight',22,5,27,7,NULL,NULL,11,5,4,0,'6. Peso Pluma'),(351,'Josh','Emmett','16-2','Featherweight',16,2,18,8,NULL,NULL,6,4,2,0,'7. Peso Pluma'),(352,'Arnold','Allen','16-1','Featherweight',16,1,17,9,NULL,NULL,4,3,3,0,'8. Peso Pluma'),(353,'Shane','Burgos','13-3','Featherweight',13,3,16,10,NULL,NULL,5,5,3,0,'9. Peso Pluma'),(354,'Aljamain','Sterling','20-3','Bantamweight',20,3,23,1,NULL,NULL,2,6,12,1,'Campeon Peso Gallo'),(355,'Petr','Yan','15-2','Bantamweight',15,2,17,2,NULL,NULL,7,3,5,1,'1. Peso Gallo'),(356,'Cory','Sandhagen','14-2','Bantamweight',14,2,16,3,NULL,NULL,6,4,4,0,'2. Peso Gallo'),(357,'Rob','Font','18-4','Bantamweight',18,4,22,4,NULL,NULL,8,6,4,0,'3. Peso Gallo'),(358,'Marlon','Moraes','23-8','Bantamweight',23,8,31,5,NULL,NULL,10,8,4,0,'4. Peso Gallo'),(359,'Jose','Aldo','29-7','Bantamweight',29,7,36,6,NULL,NULL,17,7,5,0,'5. Peso Gallo'),(360,'Frankie','Edgar','24-9','Bantamweight',24,9,33,7,NULL,NULL,7,12,5,1,'6. Peso Gallo'),(361,'Dominick','Cruz','23-3','Bantamweight',23,3,26,8,NULL,NULL,7,6,10,2,'7. Peso Gallo'),(362,'Marlon','Vera','16-7','Bantamweight',16,7,23,9,NULL,NULL,7,6,3,0,'8. Peso Gallo'),(363,'Sean','O\'Malley','13-1','Bantamweight',13,1,14,10,NULL,NULL,9,2,1,0,'9. Peso Gallo'),(364,'Deiveson','Figueiredo','21-1','Flyweight',21,1,22,1,6,NULL,9,5,7,3,'Campeon Peso Mosca'),(365,'Brandon','Moreno','18-5','Flyweight',18,5,23,2,NULL,NULL,3,8,7,1,'1. Peso Mosca'),(366,'Askar','Askarov','14-0','Flyweight',14,0,14,3,NULL,NULL,4,6,4,0,'2. Peso Mosca'),(367,'Alexandre','Pantoja','22-5','Flyweight',22,5,27,4,NULL,NULL,8,9,5,0,'3. Peso Mosca'),(368,'Alex','Perez','24-6','Flyweight',24,6,30,5,NULL,NULL,5,12,7,0,'4. Peso Mosca'),(369,'Joseph','Benavidez','28-7','Flyweight',28,7,35,6,NULL,NULL,8,11,9,0,'5. Peso Mosca'),(370,'Kai','Kara-France','21-9','Flyweight',21,9,30,7,NULL,NULL,10,9,2,0,'6. Peso Mosca'),(371,'Rogerio','Bontorin','16-2','Flyweight',16,2,18,8,NULL,NULL,3,6,2,0,'7. Peso Mosca'),(372,'Tim','Elliott','17-11','Flyweight',17,11,28,9,NULL,NULL,3,12,2,0,'8. Peso Mosca'),(373,'Matt','Schnell','15-5','Flyweight',15,5,20,10,NULL,NULL,6,4,5,0,'9. Peso Mosca');
+INSERT INTO `Peleadores` VALUES (294,'Stipe','Miocic','20-4','Heavyweight',20,4,24,1,4,NULL,15,3,2,2,'Campeon Peso Pesado'),(295,'Francis','Ngannou','17-3','Heavyweight',17,3,20,2,9,NULL,12,4,1,1,'1. Peso Pesado'),(296,'Curtis','Blaydes','15-3','Heavyweight',15,3,18,3,NULL,NULL,10,2,3,0,'2.Peso Pesado'),(297,'Derrick','Lewis','25-7','Heavyweight',25,7,32,4,NULL,NULL,20,4,1,0,'3. Peso Pesado'),(298,'Cyril','Gane','10-1','Heavyweight',10,1,11,5,NULL,NULL,5,4,1,0,'4.Peso Pesado'),(299,'Alexander','Volkov','33-9','Heavyweight',33,9,42,6,NULL,NULL,23,7,3,0,'5. Peso Pesado'),(300,'Jairzinho','Rozenstruik','12-3','Heavyweight',12,3,15,7,NULL,NULL,11,1,0,0,'6. Peso Pesado'),(301,'Marcin','Tybura','22-6','Heavyweight',22,6,28,8,NULL,NULL,9,10,3,0,'7. Peso Pesado'),(302,'Walt','Harris','13-9','Heavyweight',13,9,22,9,NULL,NULL,13,0,0,0,'8. Peso Pesado'),(303,'Chris','Daukaus','11-3','Heavyweight',11,3,14,10,NULL,NULL,8,1,2,0,'9. Peso Pesado'),(304,'Alex','Pereira','12-2','Light Heavyweight',12,2,13,1,3,NULL,10,0,2,5,'Campeon Peso Semipesado'),(305,'Jan','Blachowicz','28-8','Light Heavyweight',28,8,36,2,NULL,NULL,8,4,16,1,'1. Peso Semipesado'),(306,'Jiri','Prochazka','28-3','Light Heavyweight',28,3,31,3,NULL,NULL,25,2,1,0,'2. Peso Semipesado'),(307,'Aleksandar','Rakic','14-2','Light Heavyweight',14,2,16,4,NULL,NULL,9,2,3,0,'3. Peso Semipesado'),(308,'Dominick','Reyes','12-3','Light Heavyweight',12,3,15,5,NULL,NULL,7,5,0,0,'4. Peso Semipesado'),(309,'Thiago','Santos','21-9','Light Heavyweight',21,9,30,6,NULL,NULL,15,2,3,0,'5. Peso Semipesado'),(310,'Magomed','Ankalaev','15-1','Light Heavyweight',15,1,16,7,NULL,NULL,9,2,4,0,'6. Peso Semipesado'),(311,'Anthony','Smith','34-16','Light Heavyweight',34,16,50,8,NULL,NULL,19,8,6,0,'7. Peso Semipesado'),(312,'Johnny','Walker','18-5','Light Heavyweight',18,5,23,9,NULL,NULL,15,2,1,0,'8. Peso Semipesado'),(313,'Paul','Craig','14-4','Light Heavyweight',14,4,18,10,NULL,NULL,2,7,3,0,'9. Peso Semipesado'),(314,'Dricus','Du Plessis','22-2','Middleweight',22,2,24,1,5,NULL,8,12,2,2,'Campeon Peso Medio'),(315,'Israel','Adesanya','21-1','Middleweight',21,1,22,2,NULL,NULL,15,3,3,2,'1. Peso Medio'),(316,'Robert','Whittaker','23-5','Middleweight',23,5,28,3,NULL,NULL,9,7,6,0,'2. Peso Medio'),(317,'Paulo','Costa','13-1','Middleweight',13,1,14,4,10,NULL,11,1,1,0,'3. Peso Medio'),(318,'Jared','Cannonier','13-5','Middleweight',13,5,18,5,NULL,NULL,9,3,1,0,'4. Peso Medio'),(319,'Derek','Brunson','22-7','Middleweight',22,7,29,6,NULL,NULL,13,7,1,0,'5. Peso Medio'),(320,'Kelvin','Gastelum','17-7','Middleweight',17,7,24,7,NULL,NULL,7,5,4,0,'6. Peso Medio'),(321,'Jack','Hermansson','22-6','Middleweight',22,6,28,8,NULL,NULL,11,5,2,0,'7. Peso Medio'),(322,'Darren','Till','18-3','Middleweight',18,3,21,9,NULL,NULL,10,3,1,0,'8. Peso Medio'),(323,'Marvin','Vettori','17-4','Middleweight',17,4,21,10,NULL,NULL,7,4,1,0,'9. Peso Medio'),(324,'Kamaru','Usman','19-1','Welterweight',19,1,20,1,8,NULL,9,5,5,4,'Campeon Peso Welter'),(325,'Colby','Covington','16-2','Welterweight',16,2,18,2,NULL,NULL,4,8,4,0,'1. Peso Welter'),(326,'Gilbert','Burns','19-3','Welterweight',19,3,22,3,NULL,NULL,6,10,3,0,'2. Peso Welter'),(327,'Leon','Edwards','18-3','Welterweight',18,3,21,4,NULL,NULL,6,9,2,0,'3. Peso Welter'),(328,'Stephen','Thompson','16-4','Welterweight',16,4,20,5,NULL,NULL,7,5,3,0,'4. Peso Welter'),(329,'Jorge','Masvidal','35-14','Welterweight',35,14,49,6,NULL,NULL,16,8,11,0,'5. Peso Welter'),(330,'Michael','Chiesa','18-4','Welterweight',18,4,22,7,NULL,NULL,5,10,2,0,'6. Peso Welter'),(331,'Neil','Magny','24-8','Welterweight',24,8,32,8,NULL,NULL,7,15,2,0,'7. Peso Welter'),(332,'Geoff','Neal','13-3','Welterweight',13,3,16,9,NULL,NULL,8,4,1,0,'8. Peso Welter'),(333,'Vicente','Luque','19-7','Welterweight',19,7,26,10,NULL,NULL,11,6,2,0,'9. Peso Welter'),(334,'Charles','Oliveira','34-10','Lightweight',34,10,44,1,2,NULL,10,21,3,3,'Campeon Peso Ligero'),(335,'Dustin','Poirier','27-6','Lightweight',27,6,33,2,NULL,NULL,14,9,4,0,'1. Peso Ligero'),(336,'Justin','Gaethje','22-3','Lightweight',22,3,25,3,NULL,NULL,19,2,1,0,'2. Peso Ligero'),(337,'Michael','Chandler','22-5','Lightweight',22,5,27,4,NULL,NULL,17,3,2,0,'3. Peso Ligero'),(338,'Tony','Ferguson','25-6','Lightweight',25,6,31,5,NULL,NULL,12,8,5,0,'4. Peso Ligero'),(339,'Islam','Makhachev','19-1','Lightweight',19,1,20,6,NULL,NULL,3,10,5,0,'5. Peso Ligero'),(340,'Dan','Hooker','20-10','Lightweight',20,10,30,7,NULL,NULL,12,6,2,0,'6. Peso Ligero'),(341,'Rafael','Dos Anjos','30-13','Lightweight',30,13,43,8,NULL,NULL,5,14,3,0,'7. Peso Ligero'),(342,'Conor','McGregor','22-6','Lightweight',22,6,28,9,NULL,NULL,19,2,1,0,'8. Peso Ligero'),(343,'Gregor','Gillespie','14-1','Lightweight',14,1,15,10,NULL,NULL,6,2,2,0,'9. Peso Ligero'),(344,'Ilia','Topuria','15-0','Featherweight',15,0,15,1,1,NULL,5,8,2,1,'Campeon Peso Pluma'),(345,'Alexander','Volkanovski','23-1','Featherweight',23,1,24,2,7,NULL,11,5,7,2,'1. Peso Pluma'),(346,'Max','Holloway','22-6','Featherweight',22,6,28,3,NULL,NULL,10,6,6,2,'2. Peso Pluma'),(347,'Brian','Ortega','15-1','Featherweight',15,1,16,4,NULL,NULL,3,7,4,0,'3. Peso Pluma'),(348,'Yair','Rodriguez','13-2','Featherweight',13,2,16,5,NULL,NULL,4,7,2,0,'4. Peso Pluma'),(349,'Chan Sung','Jung','16-6','Featherweight',16,6,22,6,NULL,NULL,6,10,0,0,'5. Peso Pluma'),(350,'Calvin','Kattar','22-5','Featherweight',22,5,27,7,NULL,NULL,11,5,4,0,'6. Peso Pluma'),(351,'Josh','Emmett','16-2','Featherweight',16,2,18,8,NULL,NULL,6,4,2,0,'7. Peso Pluma'),(352,'Arnold','Allen','16-1','Featherweight',16,1,17,9,NULL,NULL,4,3,3,0,'8. Peso Pluma'),(353,'Shane','Burgos','13-3','Featherweight',13,3,16,10,NULL,NULL,5,5,3,0,'9. Peso Pluma'),(354,'Aljamain','Sterling','20-3','Bantamweight',20,3,23,1,NULL,NULL,2,6,12,1,'Campeon Peso Gallo'),(355,'Petr','Yan','15-2','Bantamweight',15,2,17,2,NULL,NULL,7,3,5,1,'1. Peso Gallo'),(356,'Cory','Sandhagen','14-2','Bantamweight',14,2,16,3,NULL,NULL,6,4,4,0,'2. Peso Gallo'),(357,'Rob','Font','18-4','Bantamweight',18,4,22,4,NULL,NULL,8,6,4,0,'3. Peso Gallo'),(358,'Marlon','Moraes','23-8','Bantamweight',23,8,31,5,NULL,NULL,10,8,4,0,'4. Peso Gallo'),(359,'Jose','Aldo','29-7','Bantamweight',29,7,36,6,NULL,NULL,17,7,5,0,'5. Peso Gallo'),(360,'Frankie','Edgar','24-9','Bantamweight',24,9,33,7,NULL,NULL,7,12,5,1,'6. Peso Gallo'),(361,'Dominick','Cruz','23-3','Bantamweight',23,3,26,8,NULL,NULL,7,6,10,2,'7. Peso Gallo'),(362,'Marlon','Vera','16-7','Bantamweight',16,7,23,9,NULL,NULL,7,6,3,0,'8. Peso Gallo'),(363,'Sean','OMalley','13-1','Bantamweight',13,1,14,10,NULL,NULL,9,2,1,0,'9. Peso Gallo'),(364,'Deiveson','Figueiredo','21-1','Flyweight',21,1,22,1,6,NULL,9,5,7,3,'Campeon Peso Mosca'),(365,'Brandon','Moreno','18-5','Flyweight',18,5,23,2,NULL,NULL,3,8,7,1,'1. Peso Mosca'),(366,'Askar','Askarov','14-0','Flyweight',14,0,14,3,NULL,NULL,4,6,4,0,'2. Peso Mosca'),(367,'Alexandre','Pantoja','22-5','Flyweight',22,5,27,4,NULL,NULL,8,9,5,0,'3. Peso Mosca'),(368,'Alex','Perez','24-6','Flyweight',24,6,30,5,NULL,NULL,5,12,7,0,'4. Peso Mosca'),(369,'Joseph','Benavidez','28-7','Flyweight',28,7,35,6,NULL,NULL,8,11,9,0,'5. Peso Mosca'),(370,'Kai','Kara-France','21-9','Flyweight',21,9,30,7,NULL,NULL,10,9,2,0,'6. Peso Mosca'),(371,'Rogerio','Bontorin','16-2','Flyweight',16,2,18,8,NULL,NULL,3,6,2,0,'7. Peso Mosca'),(372,'Tim','Elliott','17-11','Flyweight',17,11,28,9,NULL,NULL,3,12,2,0,'8. Peso Mosca'),(373,'Matt','Schnell','15-5','Flyweight',15,5,20,10,NULL,NULL,6,4,5,0,'9. Peso Mosca');
 /*!40000 ALTER TABLE `Peleadores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -467,3 +470,90 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-10-25  7:45:22
+
+
+INSERT INTO `Deporte` (`idDeporte`, `Nombre`, `Descripcion`) VALUES
+(1, 'Atletismo', 'Carreras de velocidad, fondo, saltos y lanzamientos'),
+(2, 'Natación', 'Competencia en estilos de natación: libre, espalda, pecho, y mariposa'),
+(3, 'Fútbol', 'Juego de equipo de 11 jugadores que usan sus pies para pasar y disparar al gol'),
+(4, 'Basketball', 'Juego de equipo de 5 jugadores donde intentan anotar en el aro contrario'),
+(5, 'Judo', 'Deporte de combate de origen japonés que usa técnicas de agarre'),
+(6, 'Boxeo', 'Deporte de combate donde los oponentes intentan golpear al otro con los puños'),
+(7, 'Esgrima', 'Deporte de combate con espadas'),
+(8, 'Tenis', 'Juego de raqueta en el que se juega en sencillos o dobles'),
+(9, 'Gimnasia', 'Conjunto de ejercicios físicos que requieren equilibrio, fuerza y flexibilidad'),
+(10, 'Remo', 'Deporte acuático que implica remar en botes'),
+(11, 'Halterofilia', 'Levantamiento de pesas con varias categorías de peso'),
+(12, 'Voleibol', 'Deporte de equipo que implica pasar una pelota sobre una red'),
+(13, 'Ciclismo', 'Competencia de velocidad y resistencia en bicicletas'),
+(14, 'Golf', 'Juego de precisión que se juega en un campo con hoyos'),
+(15, 'Rugby', 'Deporte de contacto con un balón ovalado'),
+(16, 'Patinaje', 'Competencias en pista o sobre hielo'),
+(17, 'Tiro con Arco', 'Competencia de precisión con arco y flechas'),
+(18, 'Esquí', 'Deporte de invierno en nieve, en descensos o en esquí de fondo'),
+(19, 'Surf', 'Deporte acuático de montar olas en una tabla'),
+(20, 'Equitación', 'Competencias de saltos y resistencia con caballos');
+
+INSERT INTO `Atleta` (`idAtleta`, `Nombre`, `Apellido`, `Nacimiento`, `Imagen`, `Pais_idPais`) VALUES
+(1, 'Juan', 'Pérez', '1995-06-12', 'juan_perez.png', 1),
+(2, 'Carlos', 'Silva', '1991-03-15', 'carlos_silva.png', 2),
+(3, 'María', 'Gómez', '1998-10-22', 'maria_gomez.png', 3),
+(4, 'Ana', 'Martínez', '1997-04-28', 'ana_martinez.png', 4),
+(5, 'Luis', 'Rodríguez', '1992-12-05', 'luis_rodriguez.png', 5),
+(6, 'Gabriela', 'Torres', '1999-07-17', 'gabriela_torres.png', 6),
+(7, 'Sofía', 'Flores', '2001-01-19', 'sofia_flores.png', 7),
+(8, 'Daniel', 'Vega', '1993-05-09', 'daniel_vega.png', 8),
+(9, 'Javier', 'Molina', '1994-11-30', 'javier_molina.png', 9),
+(10, 'Carolina', 'Herrera', '1990-09-12', 'carolina_herrera.png', 10),
+(11, 'Lucas', 'Pinto', '1995-02-18', 'lucas_pinto.png', 11),
+(12, 'Martina', 'Ortiz', '1998-03-27', 'martina_ortiz.png', 12),
+(13, 'Andrés', 'González', '1992-06-05', 'andres_gonzalez.png', 13),
+(14, 'Claudia', 'Muñoz', '1996-08-10', 'claudia_munoz.png', 14),
+(15, 'Emilio', 'Morales', '1999-04-22', 'emilio_morales.png', 15),
+(16, 'Marta', 'Vargas', '1997-07-01', 'marta_vargas.png', 16),
+(17, 'Fernando', 'Díaz', '2000-11-03', 'fernando_diaz.png', 17),
+(18, 'Isabel', 'Peña', '1991-02-16', 'isabel_pena.png', 18),
+(19, 'Natalia', 'Ramos', '1994-08-25', 'natalia_ramos.png', 19),
+(20, 'Álvaro', 'Salazar', '1996-10-11', 'alvaro_salazar.png', 20);
+
+INSERT INTO `Medalla` (`idMedalla`, `Tipo`, `Atleta_idAtleta`, `Deporte_idDeporte`) VALUES
+(1, 1, 1, 1),
+(2, 2, 2, 1),
+(3, 3, 3, 2),
+(4, 1, 4, 3),
+(5, 1, 5, 4),
+(6, 2, 6, 5),
+(7, 3, 7, 6),
+(8, 1, 8, 7),
+(9, 2, 9, 8),
+(10, 3, 10, 9),
+(11, 1, 11, 10),
+(12, 1, 12, 11),
+(13, 2, 13, 12),
+(14, 3, 14, 13),
+(15, 1, 15, 14),
+(16, 3, 16, 15),
+(17, 2, 17, 16),
+(18, 1, 18, 17),
+(19, 3, 19, 18),
+(20, 2, 20, 19),
+(21, 1, 1, 20),
+(22, 3, 2, 2),
+(23, 2, 3, 1),
+(24, 1, 4, 4),
+(25, 3, 5, 5),
+(26, 1, 6, 6),
+(27, 2, 7, 7),
+(28, 3, 8, 8),
+(29, 1, 9, 9),
+(30, 1, 10, 10),
+(31, 2, 11, 11),
+(32, 3, 12, 12),
+(33, 1, 13, 13),
+(34, 2, 14, 14),
+(35, 3, 15, 15),
+(36, 2, 16, 16),
+(37, 1, 17, 17),
+(38, 3, 18, 18),
+(39, 1, 19, 19),
+(40, 3, 20, 20);

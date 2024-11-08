@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+  
 const menu = document.querySelector(".menunav2");
 const hamburger= document.querySelector(".hamburger");
 const closeIcon= document.querySelector(".closeIcon");
@@ -8,9 +10,6 @@ const futbolc = document.querySelector(".subfutbolm");
 
 const ligas = document.querySelector(".ligasm");
 const ligasc = document.querySelector(".subligasm");
-
-const conf = document.querySelector(".confm");
-const confc = document.querySelector(".subconfm");
 
 const mma = document.querySelector(".mmam");
 const mmac = document.querySelector(".submmam");
@@ -33,6 +32,9 @@ const singlec = document.querySelector(".subsinglem");
 const doble = document.querySelector(".doblem");
 const doblec = document.querySelector(".subdoblem");
 
+const subMenus = [futbolc, ligasc, mmac, divisionesc, mayoresc, f1c, tenisc, singlec, doblec];
+
+
 function toggleMenu() {
   if (menu.style.display == "block") {
     menu.style.display = "none";
@@ -51,20 +53,30 @@ function toggleMenuc(menuc) {
   if (menuc.style.display == "block") {
     menuc.style.display = "none";
   } else {
+    subMenus.forEach(subMenu => subMenu.style.display = "none");
+    menuc.style.display = "block";
+  }
+}
+
+function toggleMenucc(menuc) {
+  if (menuc.style.display == "block") {
+    menuc.style.display = "none";
+  } else {
     menuc.style.display = "block";
   }
 }
 
 futbol.addEventListener("click", () => toggleMenuc(futbolc));
-ligas.addEventListener("click", () => toggleMenuc(ligasc));
-conf.addEventListener("click", () => toggleMenuc(confc));
+ligas.addEventListener("click", () => toggleMenucc(ligasc));
 
 mma.addEventListener("click", () => toggleMenuc(mmac));
-divisiones.addEventListener("click", () => toggleMenuc(divisionesc));
-mayores.addEventListener("click", () => toggleMenuc(mayoresc));
+divisiones.addEventListener("click", () => toggleMenucc(divisionesc));
+mayores.addEventListener("click", () => toggleMenucc(mayoresc));
 
 f1.addEventListener("click", () => toggleMenuc(f1c));
 
 tenis.addEventListener("click", () => toggleMenuc(tenisc));
-single.addEventListener("click", () => toggleMenuc(singlec));
-doble.addEventListener("click", () => toggleMenuc(doblec));
+single.addEventListener("click", () => toggleMenucc(singlec));
+doble.addEventListener("click", () => toggleMenucc(doblec));
+
+});

@@ -4,16 +4,6 @@
     $username = "alumno";
     $password = "alumnoipm";
     
-
-function country2flag(string $countryCode): string
-{
-    return (string) preg_replace_callback(
-        '/./',
-        static fn (array $letter) => mb_chr(ord($letter[0]) % 32 + 0x1F1E5),
-        $countryCode
-    );
-}
-
     $conexion = mysqli_connect($servername, $username, $password, $database); // se crea la conexion
     if (!$conexion) {
         die("Conexion fallida: " . mysqli_connect_error());
@@ -23,22 +13,21 @@ function country2flag(string $countryCode): string
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Sports</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="img/logo.svg" >
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
 </head>
 
-<body class="scrollbody">
-  <div class="cubrir">
-    <img src="img/logo.svg" alt="logo">
-  </div>
-  <header>
+<body>
+<header>
     <button class="hamburger mnic">
       <img src="img/bx-menu.svg" alt="logo" class="menuIcon">
       <img src="img/close.svg" alt="logo" class="closeIcon">
@@ -197,92 +186,70 @@ function country2flag(string $countryCode): string
     </div>
     <div class="divlink"><a href="medallero.php" class="link">Medallero</a></div>
   </div>
-<div class="asideynews">
-  <aside>
-    <div class="medallero">
-      <p>Medallero 2024</p>
-      <table>
+    <section class="tmain">
+        <div class="table_wrapper">
+        <table>
             <thead>
                 <tr class="futbolhead">
-                    <th> # | </th>
-                    <th>🌎 | </th>
-                    <th>🟡 | </th>
-                    <th>⚪ | </th>
-                    <th>🟤 | </th>
-                    <th>⭕ | </th>
+                    <th> #</th>
+                    <th> Nombre</th>
+                    <th><a href="?ft=PTS&sd=<?php echo $_GET['sd'];?>">Puntos</a></th>
+                    <th><a href="?ft=titulos&sd=<?php echo $_GET['sd'];?>">Titulos</a></th>
+                    <th><a href="?ft=ganados&sd=<?php echo $_GET['sd'];?>">Ganados</a></th>
+                    <th><a href="?ft=perdidos&sd=<?php echo $_GET['sd'];?>">Perdidos</a></th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-                $query = "SELECT 
-                p.Nombre AS Pais,
-                COUNT(CASE WHEN m.Tipo = 1 THEN 1 END) AS Oro,
-                COUNT(CASE WHEN m.Tipo = 2 THEN 1 END) AS Plata,
-                COUNT(CASE WHEN m.Tipo = 3 THEN 1 END) AS Bronce
-            FROM 
-                Pais p
-            JOIN 
-                Atleta a ON p.idPais = a.Pais_idPais
-            JOIN 
-                Medalla m ON a.idAtleta = m.Atleta_idAtleta
-            GROUP BY 
-                p.Nombre
-            ORDER BY 
-                Oro DESC, 
-                Plata DESC, 
-                Bronce DESC
-            LIMIT
-                10;
-            ";
-       $resultados = mysqli_query($conexion,$query);
+        if($_GET['sd']=="s"){
+          if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
+            $resultados = mysqli_query($conexion,"select idTenistas, nombre, apellido, puntos, titulosSingle as titulos,  SinglesGanados as ganados, SinglesPerdidos as perdidos, edad, posicion from Tenistas order by puntos desc limit 20;");
+          } else {
+            $ft = $_GET['ft'];
+            $resultados = mysqli_query($conexion,"select idTenistas, nombre, apellido, puntos, titulosSingle as titulos,  SinglesGanados as ganados, SinglesPerdidos as perdidos, edad, posicion from Tenistas order by $ft desc limit 20;");
+          }
+        } else {
+          if (empty($_GET['ft']) or $_GET['ft']=="PTS") {
+            $resultados = mysqli_query($conexion,"select idTenistas, nombre, apellido, puntos, titulosDobles as titulos, edad, posicion, DoblesGanados as ganados, DoblesPerdidos as perdidos from Tenistas order by puntos desc limit 20;");
+          } else {
+            $ft = $_GET['ft'];
+            $resultados = mysqli_query($conexion,"select idTenistas, nombre, apellido, puntos, titulosDobles as titulos, edad, posicion, DoblesGanados as ganados, DoblesPerdidos as perdidos from Tenistas order by $ft desc limit 20;");
+          }
+        }
+
+
         $tmpCount = 1;
-        while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
+        while($fila=mysqli_fetch_assoc($resultados)){ 
            ?>
                 <tr>
-                    <th><?php echo "ㅤ   ".$tmpCount?></th>
-                    <th><?php echo country2flag($fila['Pais']);?></th>
-                    
-                    <th><?php echo $fila['Oro']?></th>
-                    <th><?php echo $fila['Plata']?></th>
-                    <th><?php echo $fila['Bronce']?></th>
-                    <th><?php echo $fila['Oro']+$fila['Plata']+$fila['Bronce']?></th>
+                    <th class="mnsz"><?php echo "ㅤ   ".$tmpCount?></th>
+                    <th class="wrp"><?php echo $fila['nombre'] . " " . $fila['apellido']?></th>
+                    <th><?php echo $fila['puntos']?></th>
+                    <th class="mnsz"><?php echo $fila['titulos']?></th>
+                    <th class="mnsz"><?php echo $fila['ganados']?></th>
+                    <th class="mnsz"><?php echo $fila['perdidos']?></th>
                 </tr>
                 <?php
         $tmpCount ++; }
         ?>
-        </tbody>
+                <tr>
+                </tbody>
         </table>
-    </div>
-  </aside>
-  <div id="news-section">
-    <div class="padding">
-      <?php 
-        $resultados = mysqli_query($conexion,"select idnoticias, img, titulo from noticias order by idnoticias desc;");
-            
-        while($fila=mysqli_fetch_assoc($resultados)){ // recorremos cada fila obtenida y mostramos el nombre y el apellido
-          ?>
-          <a href="noticia.php?id=<?php echo $fila['idnoticias']?>">
-      <div class="news">
-        <img src="img/noticias/<?php echo $fila['img']?>" alt="" class="nimg">
-        <h2 class="ntitle"><?php echo $fila['titulo']?></h2>
-      </div>
-      </a>
-      <?php
-        }
-        ?>
-    </div>
-  </div>
-  <aside  class="imagad">
-    <div class="imgad">
-      <a href="https://www.disneyplus.com/es-ar/series/el-encargado/a897EzMg7taw"><img src="img/ad/elencargado.jpg" alt=""></a>
-    </div>
-  </aside>
-</div>
-  <footer>
-    <p>&copy; All Sports SRL - 2024</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="js/main.js" crossorigin="anonymous"></script>
+        </div>
+    </section>
+    <footer>
+      <p>All Sports SRL</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="js/main.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
