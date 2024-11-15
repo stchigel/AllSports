@@ -18,6 +18,14 @@ USE AllSports;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE TABLE cuentas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    correo VARCHAR(100) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL
+);
+
+
 --
 -- Table structure for table `Atleta`
 --

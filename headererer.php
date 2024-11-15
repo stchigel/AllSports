@@ -30,8 +30,26 @@
       <div class="divlink tenism"><p>Tennis</p></div>
       <div class="divlink f1m"><p>F1</p></div>
       <div class="divlink mmam"><p>MMA</p></div>
-      <div class="divlink"><p>Medallero</p></div>
+      <div class="divlink"><a href="medallero.php">Medallero</a></div>
     </div>
+    <?php
+      session_start();
+      if (isset($_SESSION['usuario'])) {
+    ?>
+    <div class="menunav11">
+      <div class="divlink"><a href="cerrar_sesion.php">Cerrar sesión</a></div>
+    </div>
+    <?php
+      }
+      else {
+    ?>
+    <div class="menunav11">
+      <div class="divlink"><a href="iniciar_sesion.php">Login</a></div>
+      <div class="divlink"><a href="crear_cuenta.php">Signup</a></div>
+    </div>
+    <?php
+      }
+    ?>
   </header>
   <div class="menunav3">
     <div class="subfutbolm subms hh">
@@ -177,6 +195,20 @@
       </div>
     </div>
     <div class="divlink"><a href="medallero.php" class="link">Medallero</a></div>
+    <?php
+      session_start();
+      if (isset($_SESSION['usuario'])) {
+    ?>
+      <div class="divlink"><a href="cerrar_sesion.php">Cerrar sesión</a></div>
+    <?php
+      }
+      else {
+    ?>
+      <div class="divlink"><a href="iniciar_sesion.php">Login</a></div>
+      <div class="divlink"><a href="crear_cuenta.php">Signup</a></div>
+    <?php
+      }
+    ?>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
